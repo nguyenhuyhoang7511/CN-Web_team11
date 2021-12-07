@@ -95,7 +95,9 @@
                     <div id="current-time">
                 <script>
                     var curDate = new Date();
-                    var curThu = curDate.getUTCDay();
+                    const weekday = ["Chủ nhật","2","3","4","5","6","7"];
+                    const d = new Date()
+                    let day = weekday[d.getDay()];
                     // Ngày hiện tại
                     var curDay = curDate.getDate();
                  
@@ -106,7 +108,7 @@
                     var curYear = curDate.getFullYear();
                    
                     // Gán vào thẻ HTML
-                    document.getElementById('current-time').innerHTML = "Thứ " + curThu + ", " + curDay + "/" + curMonth + "/" + curYear;
+                    document.getElementById('current-time').innerHTML = "Thứ " + day + ", " + curDay + "/" + curMonth + "/" + curYear;
                 </script>
                 </div>
             </p>
