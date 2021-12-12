@@ -1,0 +1,15 @@
+#sidebar{
+    width:30%;
+    background-color: #bfbfce;
+    padding-top:56px;
+    position:fixed;
+    z-index: -1;
+    top:0;
+    bottom:0;
+
+}
+
+.card{
+    width: 70%;
+    
+}
