@@ -1,15 +1,27 @@
-#sidebar{
-    width:30%;
-    background-color: #bfbfce;
-    padding-top:56px;
+.card_main{
+    min-height: 340px;
+    background-color: #ccc;
+    color:#000000;
+    font-size:14px;
+    line-height:20.02px;
+    padding: 16px 16px 24px;
     position:fixed;
-    z-index: -1;
-    top:0;
-    bottom:0;
-
+    width: 300px;
 }
 
-.card{
-    width: 70%;
-    
+.main_status{
+    min-height: 176px;
+    color:#000000;
+    font-size:14px;
+    line-height:20.02px;
+    padding:16px 16px 24px;
+    background-color: #ffffff;
+    border: 1px solid black;
+}
+
+.main_info_tour{
+    min-height: 900px;
+    padding: 16px 16px 8px;
+    background-color: #ffffff;
+    border: 1px solid black;
 }
