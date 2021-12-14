@@ -1,27 +1,130 @@
-.card_main{
+.my-nav{
+    position:fixed;
+}
+
+.main_content{
+}
+
+/* CỘT 2 */
+.main_card{
     min-height: 340px;
-    background-color: #ccc;
     color:#000000;
     font-size:14px;
     line-height:20.02px;
-    padding: 16px 16px 24px;
     position:fixed;
     width: 300px;
+    margin-top: 120px;
+    border: 1px solid black;
 }
 
 .main_status{
-    min-height: 176px;
     color:#000000;
+    min-height: 175px;
     font-size:14px;
     line-height:20.02px;
-    padding:16px 16px 24px;
     background-color: #ffffff;
     border: 1px solid black;
+    margin-top: 120px;
+    margin-bottom: 16px;
 }
+.status_main_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+.status_input_left{
+    border-bottom: 1px solid #e0e0e0;
+    flex-basis: 270px;
+}
+.status_input_right{
+    flex-basis: 270px !important;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.my_btn_status{
+    border: none;
+    font-size: 18px;
+    outline: none;
+    color: #7d8185;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+::placeholder { 
+    color: #7d8185;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container_my_btn
+{
+    border-bottom: 3px solid back;
+}
+.my-icon-calendar{
+    font-size: 25px;
+    color: #6ac4e5;
+    font-weight: 100;
+    margin-right: 10px;
+}
+.status_center_btn{
+    
+}
+/* hover */
+.status_input_left:hover ,
+.status_input_right:hover
+{
+    border-bottom: 3px solid black;
+}
+
+/* visited */
+/* .status_input_left:visited ::placeholder,
+.status_input_right:visited::placeholder
+{
+    border-bottom: 3px solid black;
+    font-size: 15px;
+    margin-bottom: 5px;
+} */
+.status_my_check{
+    border: none;
+    font-size: 18px;
+    color: #483D8B	;
+    font-weight: 100;
+}
+.status_my_check:hover{
+    border: none;
+}
+
+
 
 .main_info_tour{
     min-height: 900px;
     padding: 16px 16px 8px;
     background-color: #ffffff;
     border: 1px solid black;
+}
+
+/* CỘT 3 */
+.column3{
+    overflow-y : auto;
+}
+.main_img{
+    margin-top: 120px;
+    min-height: 300px;
+    border: 1px solid black ;
+}
+.main_voucher{
+    margin-top: 16px;
+    min-height: 256px;
+    border: 1px solid black ;
+}
+.main_brand{
+    margin-top: 16px;
+    min-height: 140px;
+    border: 1px solid black ;
+}
+.main_end{
+    margin-top: 16px;
+    min-height: 160px;
+    border: 1px solid black ;
 }
