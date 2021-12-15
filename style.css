@@ -1,31 +1,61 @@
-.my-nav{
-    position:fixed;
-}
 
+/* START HEADER*/
 .main_content{
 }
+html{
+    background-color: #fafafb;
+}
+/* END HEADER */
 
-/* CỘT 2 */
+
+
+/* START COLUMN1 */
 .main_card{
+    display: flex;
+    flex-direction: column;
     min-height: 340px;
     color:#000000;
     font-size:14px;
     line-height:20.02px;
-    position:fixed;
-    width: 300px;
+    /* position:fixed; */
+    /* width: 300px; */
     margin-top: 120px;
-    border: 1px solid black;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
 }
 
+.main_card_userName{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    
+}
+.main_card_icon{
+    background-color: #483D8B;
+    width: 50%;
+}
+.main_card_name{
+    background-color: #6ac4e5;
+    width: 50%;
+}
+
+
+
+/* END COLUMN 1*/
+
+
+
+/* START COLUMN2 */
 .main_status{
     color:#000000;
     min-height: 175px;
     font-size:14px;
     line-height:20.02px;
     background-color: #ffffff;
-    border: 1px solid black;
     margin-top: 120px;
     margin-bottom: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
 }
 .status_main_btn{
     display: flex;
@@ -70,6 +100,45 @@
 .status_center_btn{
     
 }
+.status_main_click{
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.status_main_click_left{
+    margin-left: 12px;
+
+}
+.my_btn_nangcao{
+    border: 1px solid #7d8185;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+.my_btn_nangcao:hover{
+    background-color: #ddd;
+}
+.status_main_click_right{
+    margin-right: 12px;
+}
+
+.my_btn_datlai{
+    display: none;
+    background-color: #e0e0e0;
+    margin-right: 15px;
+}
+.my_btn_timkiem{
+    background-color: #24a8d8;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    
+}
+.my_btn_timkiem:hover{
+    background-color: #197597;
+    color: #ffffff;
+}
 /* hover */
 .status_input_left:hover ,
 .status_input_right:hover
@@ -101,30 +170,137 @@
     min-height: 900px;
     padding: 16px 16px 8px;
     background-color: #ffffff;
-    border: 1px solid black;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
 }
 
-/* CỘT 3 */
+/* END COLUMN2 */
+
+
+
+/* START COLUMN 3*/
 .column3{
     overflow-y : auto;
+}
+ 
+/* img */
+.rounded_img{
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
 }
 .main_img{
     margin-top: 120px;
     min-height: 300px;
-    border: 1px solid black ;
+    width: 100%;
 }
+
+/* voucher */
 .main_voucher{
     margin-top: 16px;
-    min-height: 256px;
-    border: 1px solid black ;
 }
 .main_brand{
     margin-top: 16px;
     min-height: 140px;
-    border: 1px solid black ;
 }
 .main_end{
     margin-top: 16px;
     min-height: 160px;
     border: 1px solid black ;
 }
+/* brand */
+.my_card_brand{
+    border-radius: 15px ;
+    position: unset;
+}
+.main_title{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.main_title_left{
+    margin-left: 10px;
+    margin-right: 40px;
+    font-weight: bold;
+}
+.main_title_right a{
+    text-decoration: none;
+    color: #24a8d8;
+}
+
+.card_info{
+    display: flex;
+    flex-direction: row;
+}
+.card_info_left{
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.text_voucher{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+.text_day{
+    color: #000000;
+}
+
+/* contact */
+.container_contact{
+    margin-top: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+}
+.main_contact{
+    display: flex;
+    flex-direction: row;
+    margin: 16px;
+}
+.main_contact img{
+    width: 124px;
+}
+.main_contact_dangki{
+    max-width: 50%;
+    flex-basis: 50%;    
+}
+.main_contact_thongbao{
+    max-width: 50%;
+    flex-basis: 50%;
+}
+.main_contact_ustoa{
+    max-width: 50%;
+    flex-basis: 50%;
+}
+
+
+/* link-end */
+.main_end{
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main_end_top{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 22px;
+    margin-left: 8px;
+}
+.main_end a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.54);
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.main_end a:hover{
+}
+
+.main_end_bot{
+    margin-top: 16px;
+    margin-left: 22px;
+    justify-content: center;
+}
+.main_end span{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.54);
+/* END COLUMN 3*/
