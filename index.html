@@ -10,13 +10,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Đặt tour du lịch | Hahalolo</title>
 </head>
 <body>
     
-    <div class="container-fluid my-nav">
-        <div class="row" >
-            <nav class="navbar navbar-expand-lg navbar-light bg-light my-background " style="padding-top: 0;">
+    <div class="container-fluid position-fixed">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light " style="padding: 0;">
+            <a class="nav-link active" aria-current="page" href=""> <img  src="img/pixlr-bg-result (4).png" alt="" class="rounded-circle" style="height: 70px;"></a>
+
+            <!-- <i class="bi bi-person-circle"></i>
+        <a class="nav-link active" aria-current="page" href=""> <img  src="img/pixlr-bg-result (4).png" alt="" class="rounded-circle" style="height: 60px;"></a> -->
+                
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/news.png" alt=""style="width: 22px;height: 16px;"></a>
+                    <a class="nav-link" href="#">Bảng tin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/air-balloon.png" alt="" style="width: 22px;height: 16px;"></a>
+                    <a class="nav-link" href="#">Trải nghiệm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/destination.png" alt="" style="width: 22px;height: 16px;"></a>
+                    <a class="nav-link" href="#">Tour</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/hotels.png" alt="" style="width: 22px;height: 16px;"></a>
+
+                    <a class="nav-link" href="#">Khách sạn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/plane.png" alt="" style="width: 22px;height: 16px;"></a>
+                    <a class="nav-link" href="#">Vé máy bay</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/car-wash.png" alt="" style="width: 22px;height: 16px;"></a>
+                    <a class="nav-link" href="#">Thuê xe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/shopping-bag.png" alt="" style="width: 22px;height: 16px;"></a>
+                    <a class="nav-link" href="#">Mua sắm</a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" ><img src="img/shopping-cart.png" alt="" style="width: 34px;height: 29px;"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" ><img src="img/wallet.png" alt="" style="width: 34px;height: 29px;"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="img/pixlr-bg-result (1).png" alt="" style="height: 29px;" class="rounded-circle"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="img/user (1).png" alt="" style="height: 29px;"></a>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </nav>
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light my-background " style="padding-top: 0;">
                 
                   <div class="collapse navbar-collapse my-flex" id="navbarNav ">
                     <div class="col-md-3">
@@ -84,8 +146,8 @@
                
 
                  
-              </nav>
-        </div>
+              </nav> -->
+        
     </div>
 
 
@@ -94,15 +156,23 @@
         <!-- CỘT THỜI TIẾT -->
         <div class="col-md-3 ">
             <div class="main_card">
+                <div class="main_card_userName">
+                    <div class="main_card_icon">
+                        
+                          <i class="bi bi-person-circle"></i>
+                    </div>
+                    <div class="main_card_name">
+
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- CỘT CONTENT -->
         <div class="col-md-6 ">
             <div class="main_status">
-                <div class="row pt-4">
-                   
-                        <div class="status_main_btn">
+                <!-- <div class="row pt-4"> -->
+                        <div class="status_main_btn pt-4">
                             <div class="status_input_left">
                                 <input style="width: 100% ;" type="text" placeholder="Bạn muốn đi đâu ?" class="my_btn_status">
                             </div>
@@ -153,8 +223,18 @@
                             </div>
                         </div>
 
+                        <div class="status_main_click">
+                            <div class="status_main_click_left">
+                                <button type="button" class="btn  rounded-pill my_btn_nangcao" data-bs-toggle="collapse" data-bs-target="#demo">Tìm kiếm nâng cao</button>
 
-                        <div class=" container status_search_btn">
+                            </div>
+                            <div class="status_main_click_right">
+                                <button type="button" class="btn  rounded-pill my_btn_datlai">Đặt lại</button>
+                                <button type="button" class="btn  rounded-pill my_btn_timkiem">Tìm kiếm</button>
+                            </div>
+                        </div>
+
+                        <!-- <div class=" container status_search_btn">
                             <div class="row ms-5 mt-5 ">
                                 <div class="col">
                                     <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="collapse" data-bs-target="#demo">Thu gọn</button>
@@ -165,12 +245,13 @@
                                     
                                 </div>
                             </div>
+                            
                             <div class="row pb-5 ">
                             <a href="" class="ms-5 mt-5">Tra cữu mã đặt Tour</a>
                             </div>
 
-                        </div>
-                </div>
+                        </div> -->
+                <!-- </div> -->
             </div>
 
             <div class="main_info_tour">
@@ -178,24 +259,92 @@
             </div>
         </div>
 
-        
-
         <!-- CỘT FOOTER -->
         <div class="col-md-3 column3">
             <div class="main_img">
-
+                <img class="rounded_img" src="img/quangcao1.jpg" width="100%" alt="">
             </div>
 
             <div class="main_voucher">
-
+                <img class="rounded_img" src="img/quangcao2.jpg" width="100%" alt="">
             </div>
 
-            <div class="main_brand">
+            <div class="main_brand ">
+                <div class="card my_card_brand  ">
+                    <div class="main_title">
+                        <div class="main_title_left">
+                            <span>Trải nghiệm nổi bật</span>
+                        </div>
+                        <div class="main_title_right">
+                            <a href="">Xem tất cả</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <img src="img/quangcao3.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="card_info ">
+                            <div class="card_info_left">
+                                <img  src="img/avt_quangcao.webp" alt="">
+                            </div>
+                            <div class="card_info_right">
+                                <p class="text_voucher">SĂN VOUCHER CÙNG HAHALOLO</p>
+                                <p class="text_day">5 ngày trước</p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
 
+            <div class="container_contact">
+                    <div class="main_contact">
+                        <div class="main_contact_dangki">
+                            <img src="img/brand_dangki.png" alt="">
+                        </div>
+                        <div class="main_contact_thongbao">
+                            <img src="img/brand_thongbao.png" alt="">
+                        </div>
+                        
+                    </div>
+                    <div class="main_contact">
+                        <div class="main_contact_ustoa">
+                            <img src="img/brand_ustoa.png" alt="">
+                        </div>
+                    </div>
             </div>
 
             <div class="main_end">
+                <div class="main_end_top">
+                    <div>
+                        <a href="">Giới thiệu</a>
+                    </div>
 
+                    <div>
+                        <a href="">Quyền riêng tư</a>
+                    </div>
+
+                    <div>
+                        <a href="">Điều khoản</a>
+                    </div>
+                    <br>
+                    <div>
+                        <a href="">Cookie</a>
+                    </div>
+
+                    <div>
+                        <a href="">Tuyển dụng</a>
+                    </div>
+
+                    <div>
+                        <a href="">Hỗ trợ</a>
+                    </div>
+
+                    <div>
+                        <a href="">Tiếp thị liên kết</a>
+                    </div>
+                </div>
+                <div class="main_end_bot">
+                    <span>© Hahalolo 2017. Đã đăng ký bản quyền</span>
+                </div>
             </div>
         </div>
     </div>
