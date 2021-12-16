@@ -1,4 +1,6 @@
-
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
 /* START HEADER*/
 .main_content{
 }
@@ -17,14 +19,57 @@ html{
     color:#000000;
     font-size:14px;
     line-height:20.02px;
-    /* position:fixed; */
-    /* width: 300px; */
     margin-top: 120px;
     border: 1px solid #e0e0e0;
     border-radius: 15px;
 }
+.my_card_wt,
+.status_main_btn input,
+.status_main_btn select{
+    background-color:#fafafb ;
+}
+.main_card_container{
+    margin-left: 16px;
+    
+}
 
-.main_card_userName{
+.main_card_weather{
+    display: flex;
+    height: 77px;
+
+}
+.main_card_weather span{
+    font-size: 12px;
+}
+.temple{
+    color: #7d8185;
+    font-size: 14px;
+
+}
+.main_card_layout{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    
+}
+.main_card_layout label{
+    color: #7d8185;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.main_card_layout_end a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: #7d8185;
+    margin-left: 50px;
+}
+
+
+
+/* .main_card_userName{
     width: 100%;
     height: 30px;
     display: flex;
@@ -37,9 +82,7 @@ html{
 .main_card_name{
     background-color: #6ac4e5;
     width: 50%;
-}
-
-
+} */
 
 /* END COLUMN 1*/
 
@@ -51,7 +94,7 @@ html{
     min-height: 175px;
     font-size:14px;
     line-height:20.02px;
-    background-color: #ffffff;
+    background-color:#fafafb ;
     margin-top: 120px;
     margin-bottom: 16px;
     border: 1px solid #e0e0e0;
@@ -112,9 +155,10 @@ html{
 
 }
 .my_btn_nangcao{
-    border: 1px solid #7d8185;
+    border: 1px solid #e3e3e3;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    color: #585858;
+    font-size: 16px;
 }
 .my_btn_nangcao:hover{
     background-color: #ddd;
@@ -164,14 +208,179 @@ html{
     border: none;
 }
 
-
-
+/* Infor_tour */
 .main_info_tour{
     min-height: 900px;
     padding: 16px 16px 8px;
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 15px;
+    background-color:#fafafb ;
+    margin-bottom: 16px;
+}
+.main_info_tour_container{
+
+}
+.main_info_tour_header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.main_info_tour_header_name{
+
+}
+.main_info_tour_Carousel{
+
+}
+.main_info_tour_content{
+    padding-top: 16px;
+}
+
+.main_info_tour_content .tour{
+    color: #ff9800;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.main_info_tour_content_title b{
+    font-size: 20px;
+    color: #212121;
+    line-height: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 8px
+}
+.main_info_tour_content_city{
+    margin-top: 16px;
+}
+.main_info_tour_content_city_flex {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+
+}
+.main_info_tour_content_city_flex i {
+    margin-right: 25px;
+    color: #7a7a7a;
+    font-size: 20px;
+}
+.main_info_tour_content_text {
+    margin-top: 16px;
+    word-break: break-word;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.main_info_tour_content_city_flex b{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main_info_tour_content_price{
+    display: flex;
+    justify-content: space-between;
+}
+.main_info_tour_content_price_left .prince{
+    color: #f44336;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 0;
+}
+
+.main_info_tour_content_price_rigth .btn_xemnhanh{
+    color: #24a8d8;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+/* show những người like post */
+.main_info_tour_showInteractive{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.main_info_tour_showInteractive_left{
+    display: flex;
+    flex-direction: row;
+}
+.main_info_tour_showInteractive_left i {
+    color: #24a8d8;
+    margin-right: 10px;
+    font-size: 18px;
+}
+.main_info_tour_showInteractive_left p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #adacbd;
+}
+
+.main_info_tour_showInteractive_right{
+    display: flex;
+}
+.main_info_tour_showInteractive_right p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #adacbd;
+    margin-left: 10px;
+}
+
+/* choose */
+.main_info_tour_chooseInteractive{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    background-color:#fafafb ;
+}
+.sub_main_info_tour_chooseInteractive {
+    flex-basis: 33%;
+}
+
+.my_btn_chooseInteractive
+{
+    background-color:#fafafb ;
+    width: 100%;
+}
+.main_info_tour_comment{
+    margin-top: 24px;
+}
+.content_text{
+    background-color: #f5f5f5;
+    padding: 3px;
+    padding-bottom: 1px;
+    border-radius: 15px;
+}
+.content_text b{
+}
+.content_text p{
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    margin-bottom: 3px;
+
+}
+.main_info_tour_comment_user{
+    display: flex;
+}
+.comment_user_avatar{
+    margin-right: 12px;
+}
+.comment_user_avatar img{
+    margin-top: 5px;
+}
+
+.content_time{
+    display: flex;
+    font-size: 14px;
+    line-height: 20px;
+    color: #887373;
+    align-items: baseline;
+    margin-left: 25px;
+}
+.content_time b{
+    height: 40px;
+}
+.content_time span{
+    margin-left: 7px;
 }
 
 /* END COLUMN2 */
@@ -187,6 +396,7 @@ html{
 .rounded_img{
     border-radius: 15px;
     border: 1px solid #e0e0e0;
+    cursor: pointer;
 }
 .main_img{
     margin-top: 120px;
@@ -211,6 +421,7 @@ html{
 .my_card_brand{
     border-radius: 15px ;
     position: unset;
+    background-color:#fafafb ;
 }
 .main_title{
     margin-top: 15px;
@@ -249,6 +460,7 @@ html{
     margin-top: 16px;
     border: 1px solid #e0e0e0;
     border-radius: 15px;
+    background-color:#fafafb ;
 }
 .main_contact{
     display: flex;
@@ -278,6 +490,7 @@ html{
     border-radius: 15px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
+    background-color:#fafafb ;
 }
 .main_end_top{
     display: flex;
@@ -303,4 +516,5 @@ html{
 .main_end span{
     text-decoration: none;
     color: rgba(0, 0, 0, 0.54);
+}
 /* END COLUMN 3*/
