@@ -4,11 +4,30 @@
 /* START HEADER*/
 .main_content{
 }
-html{
-    background-color: #fafafb;
+body{
+    /* background-color: #; */
+    /* background-color: #fafafb !important; */
+    
 }
-/* END HEADER */
+.navbar_nav_center{
+    margin-left: -90px;
+}
+/* .my_icon_nav_end{
+    font-size: 23px;
+    margin-left: 15px;
+} */
+.nav-link{
+    padding: 0;
+}
+.nav-link p{
+    margin: 0;
+}
+.nav_item_center{
+    margin-left: 12px;
+}
 
+  
+/* END HEADER */
 
 
 /* START COLUMN1 */
@@ -19,7 +38,7 @@ html{
     color:#000000;
     font-size:14px;
     line-height:20.02px;
-    margin-top: 120px;
+    margin-top: 80px;
     border: 1px solid #e0e0e0;
     border-radius: 15px;
 }
@@ -95,7 +114,7 @@ html{
     font-size:14px;
     line-height:20.02px;
     background-color:#fafafb ;
-    margin-top: 120px;
+    margin-top: 80px;
     margin-bottom: 16px;
     border: 1px solid #e0e0e0;
     border-radius: 15px;
@@ -120,14 +139,23 @@ html{
     border: none;
     font-size: 18px;
     outline: none;
-    color: #7d8185;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.my_btn_status_tour{
+    border: none;
+    width: 100%;
+    outline: none;
+    color: #8d8d8d;
+    font-size: 16px;
 
 }
-::placeholder { 
-    color: #7d8185;
-    font-weight: 100;
-    font-family: Arial, Helvetica, sans-serif;
+::placeholder,
+.my_btn_status_tour {
+    font-weight: 50;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+
 }
 
 .container_my_btn
@@ -140,9 +168,7 @@ html{
     font-weight: 100;
     margin-right: 10px;
 }
-.status_center_btn{
-    
-}
+
 .status_main_click{
     margin: 20px 0px;
     display: flex;
@@ -153,6 +179,10 @@ html{
 .status_main_click_left{
     margin-left: 12px;
 
+}
+.form-check-label{
+    margin-top: 5px;
+    font-size: 16px;
 }
 .my_btn_nangcao{
     border: 1px solid #e3e3e3;
@@ -182,6 +212,16 @@ html{
 .my_btn_timkiem:hover{
     background-color: #197597;
     color: #ffffff;
+}
+.status_main_click_tracuu a {
+    color:#24a8d8;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 20px;
+    margin-right: 16px;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 16px;
 }
 /* hover */
 .status_input_left:hover ,
@@ -289,7 +329,12 @@ html{
     font-size: 16px;
     line-height: 25px;
 }
-
+.my_offcanvas{
+    width: 960px; 
+    background-image: url(img/img_xemnhanh/img_demo.PNG) ;
+    background-size: contain;
+    background-repeat: no-repeat, repeat;
+}
 /* show những người like post */
 .main_info_tour_showInteractive{
     display: flex;
@@ -321,6 +366,11 @@ html{
     margin-left: 10px;
 }
 
+
+/* START REACTION */
+
+/* END REACTION */
+
 /* choose */
 .main_info_tour_chooseInteractive{
     display: flex;
@@ -329,6 +379,7 @@ html{
     border-top: 1px solid #e2e2e2;
     border-bottom: 1px solid #e2e2e2;
     background-color:#fafafb ;
+    padding-top: 10px;
 }
 .sub_main_info_tour_chooseInteractive {
     flex-basis: 33%;
@@ -399,8 +450,7 @@ html{
     cursor: pointer;
 }
 .main_img{
-    margin-top: 120px;
-    min-height: 300px;
+    margin-top: 80px;
     width: 100%;
 }
 
@@ -427,6 +477,10 @@ html{
     margin-top: 15px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
 }
 .main_title_left{
     margin-left: 10px;
@@ -436,6 +490,7 @@ html{
 .main_title_right a{
     text-decoration: none;
     color: #24a8d8;
+    margin-right: 8px;
 }
 
 .card_info{
@@ -468,7 +523,7 @@ html{
     margin: 16px;
 }
 .main_contact img{
-    width: 124px;
+    width: 100%;
 }
 .main_contact_dangki{
     max-width: 50%;

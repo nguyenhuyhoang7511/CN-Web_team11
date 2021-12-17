@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/logo_website.png" type="image/x-icon" />
+    <link rel="icon" href="img/favicon_logo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+    <link href = "https: //fonts.googleapis.com/css2? family = Oswald: wght @ 200 & family = Source + Sans + 3: wght @ 200 & display = swap "rel =" stylesheet ">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style2.css">
     <title>Đặt tour du lịch | Hahalolo</title>
 </head>
 <body>
     
     <!-- Nav -->
-    <div class="container-fluid position-fixed">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light " style="padding: 0;">
+    <div class="container-fluid position-fixed" style="z-index: 1; padding: 0;" > 
+        <nav class="navbar navbar-expand-lg navbar-light  " style="padding: 0; height: 65px; background-color: #fff;">
             <a class="nav-link active" aria-current="page" href=""> <img  src="img/pixlr-bg-result (4).png" alt="" class="rounded-circle" style="height: 70px;"></a>
 
             <!-- <i class="bi bi-person-circle"></i>
@@ -27,54 +33,84 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-
-        <div class="collapse navbar-collapse" >
+        <!--  -->
+        <div class="collapse navbar-collapse nav_item_center_ctn " style="" >
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/news.png" alt=""style="width: 22px;height: 16px;"></a>
-                    <a class="nav-link" href="#">Bảng tin</a>
+                <li class="nav-item nav_item_center">
+                    <a class="nav-link" href="#" style="text-align: center;"> 
+                        <!-- <i class="bi my_icon_nav_end bi-newspaper"></i>   -->
+                        <img  width="auto" height="40px" src="img/img_icon_nav/img_bangtin.png" alt="">
+                        <p>Bảng tin</p>
+                    </a>                    
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/air-balloon.png" alt="" style="width: 22px;height: 16px;"></a>
-                    <a class="nav-link" href="#">Trải nghiệm</a>
+                
+                <li class="nav-item nav_item_center">
+                    <a class="nav-link" href="#" style="text-align: center;"> 
+                        <!-- <i class="bi my_icon_nav_end bi-hypnotize"></i>   -->
+                        <img  width="auto" height="40px" src="img/img_icon_nav/img_trainghiem.png" alt="">
+                        <p>Trải nghiệm</p>
+                    </a>                    
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/destination.png" alt="" style="width: 22px;height: 16px;"></a>
-                    <a class="nav-link" href="#">Tour</a>
+                <li class="nav-item nav_item_center">
+                    <a class="nav-link" href="#" style="text-align: center;"> 
+                        <img  width="auto" height="40px" src="img/img_icon_nav/img_tour.png" alt="">  
+                        <p>Tour</p>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/hotels.png" alt="" style="width: 22px;height: 16px;"></a>
-
-                    <a class="nav-link" href="#">Khách sạn</a>
+                <li class="nav-item nav_item_center">
+                    <a class="nav-link" href="#" style="text-align: center; "> 
+                        <!-- <i class="bi my_icon_nav_end bi-building"></i>   -->
+                        <img  width="auto" height="40px" src="img/img_icon_nav/img_khachsan.png" alt="">
+                        <p>Khách sạn</p>
+                    </a>
+                    
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/plane.png" alt="" style="width: 22px;height: 16px;"></a>
-                    <a class="nav-link" href="#">Vé máy bay</a>
+                <li class="nav-item nav_item_center">
+                    
+                    <a class="nav-link" href="#" style="text-align: center; "> 
+                        <img  width="auto" height="40px" src="img/img_icon_nav/img_maybay.png" alt="">
+                        <p>Vé máy bay</p>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/car-wash.png" alt="" style="width: 22px;height: 16px;"></a>
-                    <a class="nav-link" href="#">Thuê xe</a>
+                <li class="nav-item nav_item_center">
+                    
+                    <a class="nav-link" href="#" style="text-align: center; "> 
+                        <!-- <i class="bi my_icon_nav_end bi-truck"></i> -->
+                        <img  width="auto" height="40px" src="img/img_icon_nav/img_thuexe.png" alt="">
+                        <p>Thuê xe</p>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="text-align: center;"><img src="img/shopping-bag.png" alt="" style="width: 22px;height: 16px;"></a>
-                    <a class="nav-link" href="#">Mua sắm</a>
+                <li class="nav-item nav_item_center">
+                    <a class="nav-link" href="#" style="text-align: center;"> 
+                        <!-- <i class="bi my_icon_nav_end bi-bag" style="line-height: unset; "></i> -->
+                        <img  width="auto" height="40px" src="img/img_icon_nav/img_muasam.png" alt="">
+                        <p>Mua sắm</p>
+                    </a>
                 </li>
                 
             </ul>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" ><img src="img/shopping-cart.png" alt="" style="width: 34px;height: 29px;"></a>
+        <div class="collapse navbar-collapse navbar_nav_center" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">                
+                    <a class="nav-link" href="#" style="text-align: center;"> 
+                        <img  width="auto" height="45px" src="img/img_icon_nav/img_rohang.png" alt="">
+                    </a>
+                </li>
+                <li class="nav-item">                    
+                    <a class="nav-link" href="#" style="text-align: center;"> 
+                        <img  width="auto" height="45px" src="img/img_icon_nav/img_thanhtoan.png" alt="">
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" ><img src="img/wallet.png" alt="" style="width: 34px;height: 29px;"></a>
+                    <a class="nav-link" href="#" style="text-align: center;"> 
+                        <img  width="auto" height="45px" src="img/img_icon_nav/img_mess.png" alt="">
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><img src="img/pixlr-bg-result (1).png" alt="" style="height: 29px;" class="rounded-circle"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><img src="img/user (1).png" alt="" style="height: 29px;"></a>
+                    <a class="nav-link" href="#" style="text-align: center;"> 
+                        <img  width="auto" height="45px" src="img/img_icon_nav/img_user.png" alt="">
+                    </a>
                 </li>
                 </li>
             </ul>
@@ -156,9 +192,10 @@
 <div class="container ">
     <div class="row main_content">
         <!-- CỘT 1 THỜI TIẾT -->
-        <div class="col-md-3 ">
+        <div class="col-md-3 	d-none d-xl-block d-xxl-block"> 
             <!-- position-fixed -->
-            <div class="main_card my_card_wt ">
+            <div class="main_card my_card_wt shadow-sm  " style="position: fixed; width: 19.5%;">
+                
                <div class="main_card_container">
 
                         <div class="main_card_address">
@@ -258,11 +295,12 @@
                             </div>
                             <div class="status_input_left pt-5">
                                 <!-- <input style="width: 100% ;" type="text" placeholder = "Loại tour" class="my_btn_status"> -->
-                                <select class="my_btn_status my_btn_status"   >
-                                    <option  class="my_option_status" value="-1">Loại tour </option>
-                                    <option  class="my_option_status" value="0">Tất cả các loại tour &ensp;&ensp;&ensp;&ensp; &ensp; &ensp; &ensp;&ensp;&ensp;</option>
-                                    <option  class="my_option_status" value="1">Tour trong nước</option>
-                                    <option  class="my_option_status" value="2">Tour ngoài nước</option>
+                                
+                                <select class="my_btn_status_tour" name="" id="" >
+                                    <option value="">Loại tour</option>
+                                    <option value="">Tất cả các loại tour</option>
+                                    <option value="">Tour trong nước</option>
+                                    <option value="">Tour ngoài nước</option>
                                 </select>
                             </div>
                             <div class="status_input_left pt-5">
@@ -297,6 +335,11 @@
                                 <button type="button" class="btn  rounded-pill my_btn_datlai">Đặt lại</button>
                                 <button type="button" class="btn  rounded-pill my_btn_timkiem">Tìm kiếm</button>
                             </div>
+
+                        </div>
+
+                        <div class="status_main_click_tracuu">
+                            <a href="">Tra cứu mã đặt Tour</a>
                         </div>
 
                         <!-- <div class=" container status_search_btn">
@@ -391,7 +434,8 @@
                                 vào các trò chơi thể thao trên biển,… Đến Đà Nẵng để từ đó xuất phát đến những điểm tham quan du lịch nổi tiếng: 
                                 Phố cổ đèn lồng Hội An, 
                                 Bà Nà 4 mùa Xuân Hạ Thu Đông, viếng chùa Linh Ứng, viếng Ngũ Hành Sơn, vọng về Thành phố từ Bán đảo Sơn Trà…</p>
-                        </div>
+                     
+                            </div>
 
                         <div class="main_info_tour_content_price">
                             <div class="main_info_tour_content_price_left">
@@ -399,7 +443,17 @@
                                 <p class="prince">1.780.000 đ</p>
                             </div>
                             <div class="main_info_tour_content_price_rigth">
-                                <button type="button" class="btn  rounded-pill my_btn_nangcao btn_xemnhanh" ><span> Xem nhanh <i class="fas fa-chevron-right"></i></span></button>
+                                <button type="button" class="btn  rounded-pill my_btn_nangcao btn_xemnhanh" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" ><span> Xem nhanh <i class="fas fa-chevron-right"></i></span></button>
+
+                                <div class="offcanvas offcanvas-end my_offcanvas" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" >
+                                <!-- <div class="offcanvas-header">
+                                    <h5 id="offcanvasRightLabel">Viết Code tại đây</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    
+                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -415,8 +469,32 @@
                     </div>
                     <div class="main_info_tour_chooseInteractive">
                         <div class="sub_main_info_tour_chooseInteractive">
-                        <button type="button" class="btn btn-light my_btn_chooseInteractive"><i class="far fa-thumbs-up"></i> Like</button>
-
+                        
+                        <!-- <div class="post-footer"> -->
+                            <a class="icon-hover" href="#">
+                                <button type="button" class="btn btn-light my_btn_chooseInteractive btn_mg_camxuc" style="margin: top -5px; ;"> <img  width="auto" height="30" src="img_Interactive/img2_like.png" alt="" style="padding: 5px;"> Like</button>
+                                <div class="box-list-icons">
+                                    <div class="icon-thich">
+                                        <img  width="100%" src="img_Interactive/img_like.png" alt=""><label>Haha</label>
+                                    </div>
+                                    <div class="icon-yeuthich">
+                                        <img  width="100%" src="img_Interactive/img_tim.PNG" alt=""><label>Love</label>
+                                    </div>
+                                    <div class="icon-haha">
+                                        <img  width="100%" src="img_Interactive/img_haha.png" alt=""> <label>Lolo</label>
+                                    </div>
+                                    <div class="icon-wow">
+                                        <img  width="100%" src="img_Interactive/img_wow.png" alt=""> <label>Surprise</label>
+                                    </div>
+                                    <div class="icon-buon">
+                                        <img  width="100%" src="img_Interactive/img_sad.png" alt=""> <label>Sad</label>
+                                    </div>
+                                    <div class="icon-phanno">
+                                        <img  width="100%" src="img_Interactive/img_phanno.png" alt=""> <label>Angry</label>
+                                    </div>
+                                </div>
+                            </a>
+                        <!-- </div> -->
                         </div>
                         <div class="sub_main_info_tour_chooseInteractive">
                         <button type="button" class="btn btn-light my_btn_chooseInteractive "><i class="far fa-comment-alt"></i> Bình Luận</button>
@@ -561,6 +639,7 @@
                             </div>
                             <div class="main_info_tour_content_price_rigth">
                                 <button type="button" class="btn  rounded-pill my_btn_nangcao btn_xemnhanh" ><span> Xem nhanh <i class="fas fa-chevron-right"></i></span></button>
+
                             </div>
                         </div>
                     </div>
@@ -1145,7 +1224,6 @@
                             <a href="">Xem tất cả</a>
                         </div>
                     </div>
-                    <hr>
                     <img src="img/quangcao3.webp" class="card-img-top" alt="...">
                     <div class="card-body">
                         <div class="card_info ">
@@ -1215,7 +1293,7 @@
         </div>
     </div>
 </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <script src="js/main.js"></script>
