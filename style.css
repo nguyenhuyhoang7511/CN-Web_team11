@@ -26,6 +26,24 @@ body{
     margin-left: 12px;
 }
 
+/* Phần giỏ hàng */
+.btn_giohang{
+    position: relative;
+}
+.show_giohang{
+    /* display: none; */
+    height: auto;
+    width: 100%;
+    background-color: #f5f5f5;
+    position: absolute;
+    border: 1px solid black;
+    padding-left: 200px;
+    margin-right: 300px;
+}
+.show_giohang_title{
+    width: 300px;
+}
+
   
 /* END HEADER */
 
@@ -389,7 +407,11 @@ body{
 {
     background-color:#fafafb ;
     width: 100%;
+    
 }
+/* my_btn_chooseInteractive:focus{
+    outline: none;
+} */
 .main_info_tour_comment{
     margin-top: 24px;
 }
@@ -572,4 +594,4 @@ body{
     text-decoration: none;
     color: rgba(0, 0, 0, 0.54);
 }
-/* END COLUMN 31*/
+/* END COLUMN 3*/
