@@ -26,23 +26,52 @@ body{
     margin-left: 12px;
 }
 
-/* Phần giỏ hàng */
+/* Phần hiển thị giỏ hàng */
 .btn_giohang{
     position: relative;
 }
+.main_show_giohang{
+    width: 345px;
+}
 .show_giohang{
-    /* display: none; */
-    height: auto;
+    display: none;
+    height: 260px;
     width: 100%;
-    background-color: #f5f5f5;
+    background-color:#fafafb ;
     position: absolute;
-    border: 1px solid black;
-    padding-left: 200px;
-    margin-right: 300px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+
 }
-.show_giohang_title{
-    width: 300px;
+.show_giohang_title b{
+    font-size: 20px;
+    margin-left: 16px;
+
 }
+.show_giohang_thanhtoan p{
+    font-size: 16px;
+    margin-left: 16px;
+    margin-bottom: 0px;
+}
+.show_giohang_thanhtoan img{
+    margin-bottom: 10px;
+    margin-left: 20px
+}
+.show_giohang_sanpham{
+    text-align: center;
+}
+.show_giohang_sanpham i{
+    font-size: 70px;
+    color: #24a8d8;
+    font-weight: 
+
+}
+.show_giohang_sanpham p {
+    font-size: 16px;
+}
+
+/* Phần hiển thị đăng nhập user */
+
 
   
 /* END HEADER */
