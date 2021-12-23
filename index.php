@@ -231,7 +231,7 @@
                             
 
                                 <div class="layout1">
-                                    <label for="">Tộc độ giót</label>
+                                    <label for="">Tộc độ gió</label>
                                     <p>1.55m/s</p>
                                 </div>
                                 <div class="layout2">
