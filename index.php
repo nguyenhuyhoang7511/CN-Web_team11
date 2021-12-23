@@ -35,7 +35,7 @@
         </button>
 
         <!--  -->
-        <div class="collapse navbar-collapse nav_item_center_ctn " style="" >
+        <div class="collapse navbar-collapse nav_item_center_ctn " style="margin-left: 60px;" >
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item nav_item_center">
                     <a class="nav-link" href="#" style="text-align: center;"> 
@@ -91,12 +91,26 @@
                 
             </ul>
         </div>
-        <div class="collapse navbar-collapse navbar_nav_center" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse navbar_nav_end" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">                
-                    <a class="nav-link" href="#" style="text-align: center;"> 
-                        <img  width="auto" height="45px" src="img/img_icon_nav/img_rohang.png" alt="">
+                <li class="nav-item btn_giohang">                
+                    <a id="btn_hienthi_giohang"   class="nav-link " href="#" style="text-align: center;"> 
+                        <img   width="auto" height="45px" src="img/img_icon_nav/img_rohang.png" alt="">
                     </a>
+                    <!-- Phần hiển thị giỏ hàng -->
+                        <div id="show_gio_hang"  class="show_giohang" >
+                            <div class="show_giohang_title">
+                                <h6><b>Giỏ hàng</b></h6>
+                            </div>
+                            <div class="show_giohang_thanhtoan">
+                                <p>Thanh Toán </p>
+                                <img height="14" src="img/img_icon_nav/img_gachngang.PNG" alt="">
+                            </div>
+                            <div class="show_giohang_sanpham">
+                                <i class="bi bi-cart3"></i>
+                                <p>Không có sản phẩm nào trong giỏ hàng</p>
+                            </div>
+                        </div>
                 </li>
                 <li class="nav-item">                    
                     <a class="nav-link" href="#" style="text-align: center;"> 
@@ -109,9 +123,41 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="text-align: center;"> 
+                    <a  id="btn_hienthi_dangnhap" class="nav-link" href="#" style="text-align: center;"> 
                         <img  width="auto" height="45px" src="img/img_icon_nav/img_user.png" alt="">
                     </a>
+                    <!-- Phần hiển thị đăng nhập -->
+                        <div id="show_dang_nhap" class="show_dangnhap" >
+                            <a class="show_dangnhap_top" style="height: 36px;">
+                                <img height="25px" width="auto" src="img/img_show_login/img_quanlydonhang.png" alt="">
+                                <p>Quản lý đơn hàng</p>
+                            </a>
+                            <a class="show_dangnhap_top">
+                                <img style="margin-top: 10px;" height="25px" width="auto" src="img/img_show_login/img_chedo.png" alt="">
+                                <p>
+                                    Chế độ tối (Tắt) <br>
+                                    <span title="">Điều chỉnh giao diện để giảm độ chói và <br>
+                                        cho đôi mắt được nghỉ ngơi</span>
+                                </p>  
+                                                             
+                            </a>
+                            <a class="show_dangnhap_top">
+                                <img height="25px" width="auto" src="img/img_show_login/img_dangnhap.png" alt="">
+                                <p>Đăng nhập</p>   
+                            </a>
+                            <hr>      
+                            <div class="show_dangnhap_bot">
+                                <hr>
+                                <div class="show_dangnhap_end_left" >
+                                    <img src="img/img_show_login/img_ngonngu.png" alt=""> <span>Tiếng Việt</span>
+                                </div>
+
+                                <div class="show_dangnhap_end_right">
+                                    <img src="img/img_show_login/img_VND.png" alt=""> <span>VND</span>
+                                </div>
+                            </div>
+
+                        </div>
                 </li>
                 </li>
             </ul>
@@ -190,7 +236,7 @@
     </div>
 
 
-<div class="container ">
+<div id="click_container" class="container ">
     <div class="row main_content">
         <!-- CỘT 1 THỜI TIẾT -->
         <div class="col-md-3 	d-none d-xl-block d-xxl-block"> 
@@ -362,34 +408,7 @@
                         </div> -->
                 <!-- </div> -->
             </div>
-            <?php
-                 $conn = mysqli_connect('localhost:81','root','','tour');
-                 if(!$conn){
-                     die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-                }
-                $sql = "SELECT * FROM thongtinchung";
 
-                $result = mysqli_query($conn,$sql);
-                if(mysqli_num_rows($result) > 0){
-                    while($row = mysqli_fetch_assoc($result)){
-                        $chutour = $row['ChuTour'];
-                        $matour = $row['MaTour'];
-                        $tentour = $row['TenTour'];
-                        $diadiem = $row['DiaDiem'];
-                        $SoNgayDiTour = $row['SoNgayDiTour'];
-                        $TraGop = $row['TraGop'];
-                        $KhuyenMai = $row['KhuyenMai'];
-                        $hinhanh = $row['hinhanh'];
-                    }
-                }
-                else
-                {
-                    //Food Not Available 
-                        echo "<div class='error'>Food not available.</div>";
-                    
-                }
-            ?>
-                    
             <!-- Info1 -->
             <div class="main_info_tour">
                 <div class="main_info_tour_container">
@@ -397,7 +416,7 @@
                     <div class="main_info_tour_header">
                         <div class="main_info_tour_header_name">
                         <span><img src="img/infor_tour/logo_user.webp" alt=""></span>
-                           <b><?php $chutour;?></b>
+                            <b>Tuấn Dũng Travel</b>
                         </div>
                         
                         <button type="button" class="btn  rounded-pill my_btn_nangcao" ><span><i class="far fa-laugh-beam"></i>  Haha trang</span></button>
@@ -499,25 +518,25 @@
                         <div class="sub_main_info_tour_chooseInteractive">
                         
                         <!-- <div class="post-footer"> -->
-                            <a class="icon-hover" href="#">
-                                <button type="button" class="btn btn-light my_btn_chooseInteractive btn_mg_camxuc" style="margin: top -5px; ;"> <img  width="auto" height="30" src="img_Interactive/img2_like.png" alt="" style="padding: 5px;"> Like</button>
+                            <a class="icon-hover" >
+                                <button id="main_Changes"  type="button" class="btn btn-light my_btn_chooseInteractive btn_mg_camxuc" style="margin: top -5px; ;"> <img id="Changes_img_icon" width="auto" height="30" src="img_Interactive/img2_like.png" alt="" style="padding: 4px;"> <span id="Changes" style="font-size: 16px;">Like</span> </button>
                                 <div class="box-list-icons">
-                                    <div class="icon-thich">
-                                        <img  width="100%" src="img_Interactive/img_like.png" alt=""><label>Haha</label>
+                                    <div id="click_forChanges_haha" class="icon-thich">
+                                        <img id="my_icon_haha"  width="100%" src="img_Interactive/img_like.png" alt=""><label>Haha</label>
                                     </div>
-                                    <div class="icon-yeuthich">
+                                    <div id="click_forChanges_love" class="icon-yeuthich">
                                         <img  width="100%" src="img_Interactive/img_tim.PNG" alt=""><label>Love</label>
                                     </div>
-                                    <div class="icon-haha">
+                                    <div id="click_forChanges_lolo" class="icon-haha">
                                         <img  width="100%" src="img_Interactive/img_haha.png" alt=""> <label>Lolo</label>
                                     </div>
-                                    <div class="icon-wow">
+                                    <div id="click_forChanges_Surprise" class="icon-wow">
                                         <img  width="100%" src="img_Interactive/img_wow.png" alt=""> <label>Surprise</label>
                                     </div>
-                                    <div class="icon-buon">
+                                    <div id="click_forChanges_Sad" class="icon-buon">
                                         <img  width="100%" src="img_Interactive/img_sad.png" alt=""> <label>Sad</label>
                                     </div>
-                                    <div class="icon-phanno">
+                                    <div id="click_forChanges_Angry" class="icon-phanno">
                                         <img  width="100%" src="img_Interactive/img_phanno.png" alt=""> <label>Angry</label>
                                     </div>
                                 </div>
@@ -1200,7 +1219,7 @@
                             </div>
                             <div class="comment_user_content">
                                 <div class="content_text">
-                                    <b>Vân Nguyễn</b>
+                                    <b>Nguyễn Văn Đức</b>
                                     <p>Có tour nào nữa không ạ ??</p>
                                 </div>
                                 <div class="content_time">
@@ -1325,6 +1344,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+// Hiển thị giỏ hàng
+$(document).ready(function(){
+$("#btn_hienthi_giohang").click(function(){
+    $("#show_gio_hang").toggle();
+});
+});
+
+$("#click_container").click(function(){
+  $("#show_gio_hang").hide();
+});
+
+$("a[id!='btn_hienthi_giohang']").click(function(){
+  $("#show_gio_hang").hide();
+});
+
+
+
+</script>
+
+<script>
+// Hiển thị đăng nhập
+
+    $(document).ready(function(){
+$("#btn_hienthi_dangnhap").click(function(){
+    $("#show_dang_nhap").toggle();
+});
+});
+
+$("#click_container").click(function(){
+  $("#show_dang_nhap").hide();
+});
+
+$("a[id!='btn_hienthi_dangnhap']").click(function(){
+  $("#show_dang_nhap").hide();
+});
+
+</script>
 </body>
 </html>
 
