@@ -1,0 +1,115 @@
+/* SIGN IN */
+body{
+    background-color: #fafafb;
+    /* background-image: url("img/img_show_login/img_background_login.png"); */
+    background-image: url(/img/img_show_login/img_background_login.png);
+}
+.my_container{
+    margin-top: 128px;
+}
+.container_right_form{
+    margin-left: 150px;
+}
+.form_login{
+    width: 450px;
+    height: 450px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.form_login h6{
+    margin-top: 24px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 40px;
+
+}
+.form_login label{
+    font-size: 12px;
+}
+.form_login input{
+    height: 55px;
+    width: 400px;
+    margin-left: 25px;
+}
+.btn_dangnhap{
+    background-color: #24a8d8;
+    text-align: center;
+    width: 400px;
+    border-radius: 25px;
+    margin-left: 25px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 18px;
+
+}
+.link_quenMk{
+    margin-bottom: 24px;
+}
+.link_quenMk,
+.link_dangki {
+    text-align: center;
+}
+.form_login a{
+    text-decoration: none;
+    color: #24a8d8;
+    font-weight: 500;
+}
+
+/* END SIGN IN */
+
+
+
+/* START SIGN UP */
+.form_signUp{
+    width: 450px;
+    height: 600px;
+}
+.my_row_2{
+    /* margin-top: 160px; */
+    margin-top: 10px;
+}
+.my_container{
+    margin-top: 110px;
+}
+.container_left_btn{
+    display: flex;
+    margin-top: 30px;
+}
+.btn_store{
+    border: 1px solid #cbcbcc;
+     border-radius: 25px;
+    width: 130px;
+    height: 35px;
+    color: #737373;
+    font-size: 16px;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.container_right_btn{
+    margin-left: 280px;
+    margin-top: 50px;
+}
+.container_right_btn a{
+    color: #000;
+    text-decoration: none;
+}
+.container_right_btn span{
+    color: #24a8d8;
+}
+.dieukhoan_dịchvu{
+    text-align: center;
+    width: 390px;
+    margin-left: 26px;
+    margin-bottom: 30px;
+}
+.color_imp{
+    color:#24a8d8 ;
+    font-size: 16px;
+}
+/* END SIGN IN */
+
