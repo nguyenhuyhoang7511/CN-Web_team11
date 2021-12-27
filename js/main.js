@@ -81,7 +81,7 @@ function fct_Changes_haha(){
 let click_forChanges_love = document.getElementById('click_forChanges_love');
 click_forChanges_love.addEventListener('click',fct_Changes_love);
 function fct_Changes_love(){
-    Changes.innerHTML = "love";
+    Changes.innerHTML = "Love";
     Changes_img_icon.src='img_Interactive/img_tim.PNG';
 }
 
@@ -89,7 +89,7 @@ function fct_Changes_love(){
 let click_forChanges_lolo = document.getElementById('click_forChanges_lolo');
 click_forChanges_lolo.addEventListener('click',fct_Changes_lolo);
 function fct_Changes_lolo(){
-    Changes.innerHTML = "lolo";
+    Changes.innerHTML = "Lolo";
     Changes_img_icon.src='img_Interactive/img_haha.png';
     
 }
@@ -122,6 +122,7 @@ function fct_Changes_Angry(){
 }
 
 // END CHỨC NĂNG REACTION
+
 
 
 
