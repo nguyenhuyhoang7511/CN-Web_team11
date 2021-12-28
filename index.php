@@ -273,11 +273,12 @@
 
         <!-- CỘT CONTENT -->
         <div class="col-md-6 ">
+            <form action="search.php" method="POST">
             <div class="main_status">
                 <!-- <div class="row pt-4"> -->
                         <div class="status_main_btn pt-4">
                             <div class="status_input_left">
-                                <input style="width: 100% ;" type="text" placeholder="Bạn muốn đi đâu ?" class="my_btn_status">
+                                <input style="width: 100% ;" type="text" placeholder="Bạn muốn đi đâu ?" class="my_btn_status" name="diadiem">
                             </div>
                             <div class="status_input_right">
                                 <i class="far fa-calendar-alt my-icon-calendar"></i> <input style="width: 80% ;" type="text" placeholder="MM/YYYY" class="my_btn_status"> <i class="fas fa-times"></i>
@@ -286,18 +287,18 @@
 
                         <div id="demo" class=" status_main_btn status_center_btn collapse ">
                             <div class="status_input_left pt-5">
-                                <input style="width: 100% ;" type="text" placeholder = "Điểm khởi hành" class="my_btn_status">
+                                <input style="width: 100% ;" type="text" placeholder = "Điểm khởi hành" class="my_btn_status" name="diemkhoihanh">
                             </div>
                             <div class="status_input_left pt-5">
-                                <input style="width: 100% ;" type="text" placeholder = "Điểm đến" class="my_btn_status">
+                                <input style="width: 100% ;" type="text" placeholder = "Điểm đến" class="my_btn_status" name="diemden">
                             </div>
                             <div class="status_input_left pt-5">
-                                <input style="width: 100% ;" type="text" placeholder = "Chủ đề tour" class="my_btn_status">
+                                <input style="width: 100% ;" type="text" placeholder = "Chủ đề tour" class="my_btn_status" name="chitiet">
                             </div>
                             <div class="status_input_left pt-5">
                                 <!-- <input style="width: 100% ;" type="text" placeholder = "Loại tour" class="my_btn_status"> -->
                                 
-                                <select class="my_btn_status_tour" name="" id="" >
+                                <select class="my_btn_status_tour" name="loaitour" id="" >
                                     <option value="">Loại tour</option>
                                     <option value="">Tất cả các loại tour</option>
                                     <option value="">Tour trong nước</option>
@@ -305,22 +306,22 @@
                                 </select>
                             </div>
                             <div class="status_input_left pt-5">
-                                <input style="width: 100% ;" type="text" placeholder = "Số ngày đi tour" class="my_btn_status">
+                                <input style="width: 100% ;" type="text" placeholder = "Số ngày đi tour" class="my_btn_status" name = "songayditour">
                             </div>
                             <div class="status_input_left pt-5">
-                                <input style="width: 100% ;" type="text" placeholder = "Khoảng giá" class="my_btn_status">
+                                <input style="width: 100% ;" type="text" placeholder = "Khoảng giá" class="my_btn_status" name = "khoanggia">
                             </div>
 
                             <!-- 2 cái checkbox -->
                             <div class="status_input_left pt-5 status_my_check">
-                                <input class="form-check-input" type="checkbox" placeholder = "" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" placeholder = "" id="flexCheckDefault" name ="checkKM">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Có áp dụng khuyến mãi
                                 </label>
                             </div>
 
                             <div class="status_input_left pt-5 status_my_check">
-                                <input class="form-check-input" type="checkbox" placeholder = "" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" placeholder = "" id="flexCheckDefault" name ="checkTG">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Tour trả góp
                                 </label>
@@ -334,7 +335,7 @@
                             </div>
                             <div class="status_main_click_right">
                                 <button type="button" class="btn  rounded-pill my_btn_datlai">Đặt lại</button>
-                                <button type="button" class="btn  rounded-pill my_btn_timkiem">Tìm kiếm</button>
+                                <button  type="button" class="btn  rounded-pill my_btn_timkiem" method="POST">Tìm kiếm</button>
                             </div>
 
                         </div>
@@ -362,16 +363,18 @@
                         </div> -->
                 <!-- </div> -->
             </div>
+            </form>
             <?php
                  $conn = mysqli_connect('localhost','root','','tour');
                  if(!$conn){
                      die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
                 }
                 $sql = "SELECT * FROM thongtinchung tc,loaitour lt,thongtinchitiet tt WHERE tc.MaTour = tt.ID and tc.LoaiTour = lt.MaLoai";
-
+                $sql1 = "SELECT * FROM binhluan bl,nguoidung nd,thongtinchung tc WHERE bl.MaND = nd.id and bl.idTour = tc.MaTour";
                 $result = mysqli_query($conn,$sql);
-                if(mysqli_num_rows($result) > 0){
-                    while($row = mysqli_fetch_assoc($result)){
+                $result1 = mysqli_query($conn,$sql1);
+                if(mysqli_num_rows($result) > 0 and mysqli_num_rows($result1) > 0){
+                    while($row = (mysqli_fetch_assoc($result)) and $row1 = mysqli_fetch_assoc($result1)){
             ?>
                     
             <!-- Info1 -->
@@ -518,10 +521,11 @@
                             <div class="comment_user_avatar">
                                 <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_dangthihuong.webp" alt="">
                             </div>
+                            
                             <div class="comment_user_content">
                                 <div class="content_text">
-                                    <b>Đặng Thị Hường</b>
-                                    <p>Tour này nhiều ưu đãi quá, tuyệt vời</p>
+                                    <b><?php echo $row1['TaiKhoan'] ?></b>
+                                    <p><?php echo $row1['BinhLuan'] ?></p>
                                 </div>
                                 <div class="content_time">
                                     <b href="">Haha ·</b> <b>Trả Lời ·</b> <span>3 tháng trước</span>
