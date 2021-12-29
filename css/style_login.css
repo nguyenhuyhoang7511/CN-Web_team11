@@ -33,6 +33,18 @@ body{
     height: 55px;
     width: 400px;
     margin-left: 25px;
+    outline: none !important;
+}
+.input_taikhoan{
+    width: 425px;
+}
+.input_pass{
+    border-right: none;
+}
+.btn_showpass{
+    height: 55px;
+    background-color: #ffffff;
+    border-left: none;
 }
 .btn_dangnhap{
     background-color: #24a8d8;
@@ -61,7 +73,12 @@ body{
 .my_row_dangnhap{
     margin-top: 160px;
 }
-
+.php_show_account{
+    color: red;
+    text-align: center;
+    margin-top: 6px;
+    margin-bottom: -6px;
+}
 /* END SIGN IN */
 
 
