@@ -4,12 +4,9 @@ $db_handle = new DBController();
 
 $action = $_POST["action"];
 if(!empty($action)) {
-	switch($action) {		
+	switch($action) {
 		case "add":
-			// $date = date('Y-m-d H:i:s');
-			// $Username = "Nguyễn Huy Hoàng";
 		    $query = "INSERT INTO db_comment(message) VALUES('".$_POST["txtmessage"]."')";
-			// $query ="INSERT INTO comment(user_comment,message,date) VALUES ('" . $Username . "','" . $_POST["txtmessage"] . "','" . $date . "')";
 		    $insert_id = $db_handle->insert($query);
 		    if($insert_id){
 				  echo '<div class="message-box"  id="message_' . $insert_id . '">
