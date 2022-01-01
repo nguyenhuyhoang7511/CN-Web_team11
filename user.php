@@ -734,74 +734,61 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
 
                         <!-- Comment1 -->
                         <div class="main_info_tour_comment">
-                            <div class="main_info_tour_comment_user">
-                                <div class="comment_user_avatar">
+                            
+                            <div class="main_info_tour_comment_user " >
+                                    <div class="comment_user_avatar">
                                     <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_dangthihuong.webp" alt="">
-                                </div>
-                                <div class="comment_user_content">
-                                    <div class="content_text">
-                                        <b>Đặng Thị Hường</b>
-                                        <p>Tour này nhiều ưu đãi quá, tuyệt vời</p>
                                     </div>
-                                    <div class="content_time">
-                                        <b href="">Haha ·</b> <b>Trả Lời ·</b> <span>3 tháng trước</span>
+                                    <div class="comment_user_content">
+                                        <div class="content_text">
+                                            <b>Đặng Thị Hường</b>
+                                            <p><div class="message-content">Tour này nhiều ưu đãi quá, tuyệt vời</div></p>
+                                        </div>
+                                        <div class="btn_show_option">
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnEditAction text-secondary ">Sửa</button>
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Xóa</button>                                            
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Haha</button>                                            
+                                            <span class="text-secondary">Thời gian : 2 tuần trước</span>
+                                        </div>                                        
                                     </div>
-                                </div>
                             </div>
-                            <!-- comment2 -->
-                            <div class="main_info_tour_comment_user">
-                                <div class="comment_user_avatar">
+                            <!-- comment2 -->                    
+                            <div class="main_info_tour_comment_user " >
+                                    <div class="comment_user_avatar">
                                     <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_vannguyen.webp" alt="">
-                                </div>
-                                <div class="comment_user_content">
-                                    <div class="content_text">
-                                        <b>Vân Nguyễn</b>
-                                        <p>Có tour nào nữa không ạ ??</p>
                                     </div>
-                                    <div class="content_time">
-                                        <b href="">Haha ·</b> <b>Trả Lời ·</b> <span>3 tháng trước</span>
+                                    <div class="comment_user_content">
+                                        <div class="content_text">
+                                            <b>Vân Nguyễn</b>
+                                            <p><div class="message-content">Có tour nào nữa không ạ ??</div></p>
+                                        </div>
+                                        <div class="btn_show_option">
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnEditAction text-secondary ">Sửa</button>
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Xóa</button>                                            
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Haha</button>                                            
+                                            <span class="text-secondary">Thời gian : 1 Tuần trước</span>
+                                        </div>                                        
                                     </div>
-                                </div>
                             </div>
 
-                            <!-- comment3 -->
-                            <div class="main_info_tour_comment_user">
-                                <div class="comment_user_avatar">
+                            <!-- comment3 -->                    
+                            <div class="main_info_tour_comment_user " >
+                                    <div class="comment_user_avatar">
                                     <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_dinhkimanh.webp" alt="">
-                                </div>
-                                <div class="comment_user_content">
-                                    <div class="content_text">
-                                        <b>Đinh Kim Anh</b>
-                                        <p>Tour này rất vui và tuyệt vời. Wellcome Đà Nẵng City</p>
                                     </div>
-                                    <div class="content_time">
-                                        <b href="">Haha ·</b> <b>Trả Lời ·</b> <span>3 tháng trước</span>
+                                    <div class="comment_user_content">
+                                        <div class="content_text">
+                                            <b>Đinh Kim Anh</b>
+                                            <p><div class="message-content">Tour này rất vui và tuyệt vời. Đà Nẵng City </div></p>
+                                        </div>
+                                        <div class="btn_show_option">
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnEditAction text-secondary ">Sửa</button>
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Xóa</button>                                            
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Haha</button>                                            
+                                            <span class="text-secondary">Thời gian : 4 ngày trước</span>
+                                        </div>                                        
                                     </div>
-                                </div>
                             </div>
-
-                            <!-- Form nhập comment
-                        <form action="process-comment.php" method="POST">
-                            <div class="main_info_tour_comment_formComment">
-                                <div class="main_info_tour_comment_formComment_left">
-                                    <img src="img/user_comment/img_avtUser.png" alt="">
-                                </div>
-
-                                <div class="main_info_tour_comment_formComment_right">
-                                    <div class="main_info_tour_comment_formComment_right_enter">
-                                        <input type="text" placeholder="Viết bình luận" name="txt_comment" >
-                                    </div>
-                                    <div class="main_info_tour_comment_formComment_right_icon"> -->
-                            <!-- <a class="bi bi-emoji-smile" href=""></a>
-                                        <a class="bi bi-card-image" href=""></a> -->
-                            <!-- <button class="bi bi-send " name="txtsendComment"></button>      
-                                                              
-                                    </div>
-                                </div>
-                            </div>
-
-                        </form> -->
-
                         <?php
                             require_once("DBController.php");
                             $db_handle = new DBController();
@@ -866,10 +853,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                         <?php
                         if (!empty($comments)) {
                             foreach ($comments as $k => $v) {
-                        ?>
-                                    
-                                    
-
+                        ?>                            
                                 <div class="main_info_tour_comment_user message-box" id="message_<?php echo $comments[$k]["id"]; ?>">
                                     <div class="comment_user_avatar">
                                         <img width="36" height="36" class="rounded-circle" src="img/user_comment/img_avtUser.png" alt="">
@@ -885,14 +869,16 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                     ?>
                                             </b>
                                             <p><div class="message-content"><?php echo $comments[$k]["message"]; ?></div></p>
-                                        <!-- </div>
-                                        <div class="btn_show_option"> -->
-                                            <button class="btnEditAction btnEditAction btn btn-outline-secondary btn-sm" name="edit" onClick="showEditBox(this,<?php echo $comments[$k]["id"]; ?>)">Edit</button>
-                                            <button class="btnDeleteAction btnEditAction btn btn-outline-secondary btn-sm" name="delete" onClick="callCrudAction('delete',<?php echo $comments[$k]["id"]; ?>)">Delete</button>
                                         </div>
-                                        <div class="content_time">
+                                        <div class="btn_show_option">
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnEditAction text-secondary  btn-sm" name="edit" onClick="showEditBox(this,<?php echo $comments[$k]["id"]; ?>)">Sửa</button>
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" name="delete" onClick="callCrudAction('delete',<?php echo $comments[$k]["id"]; ?>)">Xóa</button>                                            
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Haha</button>                                            
+                                            <span class="text-secondary">Thời gian : <?php echo $comments[$k]["time_cmt"]; ?></span>
+                                        </div>
+                                        <!-- <div class="content_time">
                                             <b href="">Haha ·</b> <b>Trả Lời ·</b> <span>3 tháng trước</span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                         <?php
@@ -914,7 +900,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                         <!-- <a class="bi bi-emoji-smile" href=""></a>
                                         <a class="bi bi-card-image" href=""></a>
                                         <button class="bi bi-send " name="txtsendComment"></button>  -->
-                                        <a href=""><button id="btnAddAction" name="submit" onClick="callCrudAction('add','')">Enter</button></a>                                       
+                                        <a href=""><button class="text-success" style="background-color: unset; border: none;" id="btnAddAction" name="submit" onClick="callCrudAction('add','')">Gửi</button></a>                                       
                                     </div>
                                 </div>
                         </div>
