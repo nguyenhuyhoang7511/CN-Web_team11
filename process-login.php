@@ -50,7 +50,8 @@
                  if(password_verify($pass,$matkhaund))
                 {
                     $_SESSION['isLoginOK'] = $email;
-                    header("location: user.php");
+                    $show_name = $email;
+                    header("location: user.php?showname= $show_name"); 
                 }
                 else
                 {
