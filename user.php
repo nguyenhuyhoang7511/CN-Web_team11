@@ -888,7 +888,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
 
                 <div id="frmAdd" class="main_info_tour_comment_formComment">
                                 <div class="main_info_tour_comment_formComment_left">
-                                    <img src="img/user_comment/img_avtUser.png" alt="">
+                                    <img class="rounded-circle" src="img/user_comment/img_avtUser.png" alt="">
                                 </div>
                                 
 
@@ -900,7 +900,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                         <!-- <a class="bi bi-emoji-smile" href=""></a>
                                         <a class="bi bi-card-image" href=""></a>
                                         <button class="bi bi-send " name="txtsendComment"></button>  -->
-                                        <a href=""><button class="text-success" style="background-color: unset; border: none;" id="btnAddAction" name="submit" onClick="callCrudAction('add','')">Gửi</button></a>                                       
+                                        <a ><button class="text-success " style="background-color: unset; border: none;" id="btnAddAction" name="submit" onClick="callCrudAction('add','')">Gửi</button></a>                                       
                                     </div>
                                 </div>
                         </div>
