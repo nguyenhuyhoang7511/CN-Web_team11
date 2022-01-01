@@ -731,6 +731,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                 <button type="button" class="btn btn-light my_btn_chooseInteractive "><i class="far fa-share-square"></i> Chia sẻ</button>
                             </div>
                         </div>
+
                         <!-- Comment1 -->
                         <div class="main_info_tour_comment">
                             <div class="main_info_tour_comment_user">
@@ -793,142 +794,140 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                     <div class="main_info_tour_comment_formComment_right_icon"> -->
                             <!-- <a class="bi bi-emoji-smile" href=""></a>
                                         <a class="bi bi-card-image" href=""></a> -->
-                            <!-- <button class="bi bi-send " name="txtsendComment"></button>                                        
+                            <!-- <button class="bi bi-send " name="txtsendComment"></button>      
+                                                              
                                     </div>
                                 </div>
                             </div>
+
                         </form> -->
 
-                            <?php
+                        <?php
                             require_once("DBController.php");
                             $db_handle = new DBController();
                             $comments = $db_handle->runQuery("SELECT * FROM db_comment");
-                            ?>
-                            <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-                            <script>
-                                function showEditBox(editobj, id) {
-                                    $('#frmAdd').hide();
-                                    $(editobj).prop('disabled', 'true');
-                                    var currentMessage = $("#message_" + id + " .message-content").html();
-                                    var editMarkUp = '<input type="text" placeholder="Viết bình luận" id="txtmessage_' + id + '">' + currentMessage + '</input><button name="ok" onClick="callCrudAction(\'edit\',' + id + ')">Save</button><button name="cancel" onClick="cancelEdit(\'' + currentMessage + '\',' + id + ')">Cancel</button>';
-                                    $("#message_" + id + " .message-content").html(editMarkUp);
+                        ?>
+                        <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+                        <script>
+                            function showEditBox(editobj, id) {
+                                $('#frmAdd').hide();
+                                $(editobj).prop('disabled', 'true');
+                                var currentMessage = $("#message_" + id + " .message-content").html(); 
+                                var editMarkUp = '<br> <input  id="txtmessage_' + id + '">' +  '<button class = "btn btn-outline-secondary btn-sm"">' + currentMessage + '</button>' + '</inp><button class = "btn btn-outline-secondary btn-sm" name="ok" onClick="callCrudAction(\'edit\',' + id + ')">Save</button> <button class = "btn btn-outline-secondary btn-sm"  name="cancel" onClick="cancelEdit(\'' + currentMessage + '\',' + id + ')">Cancel</button>';
+                                $("#message_" + id + " .message-content").html(editMarkUp);
+                            }
+
+                            function cancelEdit(message, id) {
+                                $("#message_" + id + " .message-content").html(message);
+                                $('#frmAdd').show();
+                            }
+
+                            function callCrudAction(action, id) {
+                                $("#loaderIcon").show();
+                                var queryString;
+                                switch (action) {
+                                    case "add":
+                                        queryString = 'action=' + action + '&txtmessage=' + $("#txtmessage").val();
+                                        break;
+                                    case "edit":
+                                        queryString = 'action=' + action + '&message_id=' + id + '&txtmessage=' + $("#txtmessage_" + id).val();
+                                        break;
+                                    case "delete":
+                                        queryString = 'action=' + action + '&message_id=' + id;
+                                        break;
                                 }
-
-                                function cancelEdit(message, id) {
-                                    $("#message_" + id + " .message-content").html(message);
-                                    $('#frmAdd').show();
-                                }
-
-                                function callCrudAction(action, id) {
-                                    $("#loaderIcon").show();
-                                    var queryString;
-                                    switch (action) {
-                                        case "add":
-                                            queryString = 'action=' + action + '&txtmessage=' + $("#txtmessage").val();
-                                            break;
-                                        case "edit":
-                                            queryString = 'action=' + action + '&message_id=' + id + '&txtmessage=' + $("#txtmessage_" + id).val();
-                                            break;
-                                        case "delete":
-                                            queryString = 'action=' + action + '&message_id=' + id;
-                                            break;
-                                    }
-                                    jQuery.ajax({
-                                        url: "crud_action.php",
-                                        data: queryString,
-                                        type: "POST",
-                                        success: function(data) {
-                                            switch (action) {
-                                                case "add":
-                                                    $("#comment-list-box").append(data);
-                                                    break;
-                                                case "edit":
-                                                    $("#message_" + id + " .message-content").html(data);
-                                                    $('#frmAdd').show();
-                                                    $("#message_" + id + " .btnEditAction").prop('disabled', '');
-                                                    break;
-                                                case "delete":
-                                                    $('#message_' + id).fadeOut();
-                                                    break;
-                                            }
-                                            $("#txtmessage").val('');
-                                            $("#loaderIcon").hide();
-                                        },
-                                        error: function() {}
-                                    });
-                                }
-                            </script>
-
-                            <div class="form_style">
-                                <div id="comment-list-box">
-                                    <?php
-                                    if (!empty($comments)) {
-                                        foreach ($comments as $k => $v) {
-                                    ?>
-                                            <div class="message-box main_info_tour_comment_user " id="message_<?php echo $comments[$k]["id"]; ?>" >
-                                                <div class="comment_user_avatar">
-                                                    <img width="36" height="36" class="rounded-circle" src="img/user_comment/img_avtUser.png" alt="">
-                                                    <!-- <img src="img/user_comment/img_avtUser.png" alt=""> -->
-                                                </div>
-
-                                                <div class="comment_user_content">
-                                                    <div class="content_text">
-                                                        <b>
-                                                        <?php
-                                                        // Kiểm tra xem có tồn tại cái error hay không 
-                                                        if (isset($_GET['showname'])) {
-                                                            echo  $_GET['showname'];
-                                                        }
-                                                        ?>
-                                                        </b>
-                                                        <p><?php echo $comments[$k]["message"]; ?></p>
-                                                    </div>
-                                                    <div class="content_time">
-                                                        <b href="">Haha ·</b> <b>Trả Lời ·</b> <span><?php echo $comments[$k]["time_cmt"]; ?></span>
-                                                    </div>
-                                                </div>
-
-                                                <div>                                                    
-                                                </div>
-                                                <!-- CHỨC NĂNG SỬA XÓA  COMMENT -->
-                                                <div class="btn_show_option" style="cursor: pointer;" >
-                                                    <!-- <br> -->
-                                                    <a style="margin-left: 10px; margin-top: 20px;"   class="bi bi-three-dots btn_class_showOption" id=""></a>
-                                                </div>
-                                                <div class="div_container_option" style="margin-left: 10px;" >
-                                                    <button class=" btn btn-outline-secondary btnEditAction" name="edit" onClick="showEditBox(this,<?php echo $comments[$k]["id"]; ?>)">Edit</button>
-                                                    <button class=" btn btn-outline-secondary btnDeleteAction" name="delete" onClick="callCrudAction('delete',<?php echo $comments[$k]["id"]; ?>)">Delete</button>
-                                                </div>
-
-                                            </div>                                           
-                                    <?php
+                                jQuery.ajax({
+                                    url: "crud_action.php",
+                                    data: queryString,
+                                    type: "POST",
+                                    success: function(data) {
+                                        switch (action) {
+                                            case "add":
+                                                $("#comment-list-box").append(data);
+                                                break;
+                                            case "edit":
+                                                $("#message_" + id + " .message-content").html(data);
+                                                $('#frmAdd').show();
+                                                $("#message_" + id + " .btnEditAction").prop('disabled', '');
+                                                break;
+                                            case "delete":
+                                                $('#message_' + id).fadeOut();
+                                                break;
                                         }
+                                        $("#txtmessage").val('');
+                                        $("#loaderIcon").hide();
+                                    },
+                                    error: function() {}
+                                });
+                            }
+                        </script>                            
+            <div class="form_style">
+                <div id="comment-list-box">
+                        <?php
+                        if (!empty($comments)) {
+                            foreach ($comments as $k => $v) {
+                        ?>
+                                    
+                                    
+
+                                <div class="main_info_tour_comment_user message-box" id="message_<?php echo $comments[$k]["id"]; ?>">
+                                    <div class="comment_user_avatar">
+                                        <img width="36" height="36" class="rounded-circle" src="img/user_comment/img_avtUser.png" alt="">
+                                    </div>
+                                    <div class="comment_user_content">
+                                        <div class="content_text">
+                                            <b>
+                                            <?php
+                                    // Kiểm tra xem có tồn tại cái error hay không 
+                                    if (isset($_GET['showname'])) {
+                                        echo  $_GET['showname'];
                                     }
                                     ?>
-                                </div>
-                                    <!-- Input nhập bình luận -->
-                                <div class="main_info_tour_comment_formComment_right">
-                                    <div class="main_info_tour_comment_formComment_left">
-                                        <img width="auto" height="36" class="rounded-circle" src="img/user_comment/img_avtUser.png" alt="">
-                                    </div>  
-                                    <div class="main_info_tour_comment_formComment_right">
-                                        <div class="main_info_tour_comment_formComment_right_enter">
-                                            <input type="text" placeholder="Viết bình luận" name="txtmessage" id="txtmessage"" >
+                                            </b>
+                                            <p><div class="message-content"><?php echo $comments[$k]["message"]; ?></div></p>
+                                        <!-- </div>
+                                        <div class="btn_show_option"> -->
+                                            <button class="btnEditAction btnEditAction btn btn-outline-secondary btn-sm" name="edit" onClick="showEditBox(this,<?php echo $comments[$k]["id"]; ?>)">Edit</button>
+                                            <button class="btnDeleteAction btnEditAction btn btn-outline-secondary btn-sm" name="delete" onClick="callCrudAction('delete',<?php echo $comments[$k]["id"]; ?>)">Delete</button>
                                         </div>
-                                        <div class="main_info_tour_comment_formComment_right_icon"> 
-                                            <a class="bi bi-emoji-smile" href=""></a>
-                                            <!-- <a class="bi bi-card-image" href=""></a> -->
-                                            <a href=""><button class="bi bi-send" button id="btnAddAction" name="submit" onClick="callCrudAction('add','')" style="border: none; font-size: 18px;"></button></a>
+                                        <div class="content_time">
+                                            <b href="">Haha ·</b> <b>Trả Lời ·</b> <span>3 tháng trước</span>
                                         </div>
                                     </div>
-                                    
-                                    <img src="LoaderIcon.gif" id="loaderIcon" style="display:none" />
-                                </div>                                
-                            </div>
+                                </div>
+                        <?php
+                            }
+                        } ?>
+                </div>
+
+                <div id="frmAdd" class="main_info_tour_comment_formComment">
+                                <div class="main_info_tour_comment_formComment_left">
+                                    <img src="img/user_comment/img_avtUser.png" alt="">
+                                </div>
+                                
+
+                                <div class="main_info_tour_comment_formComment_right">
+                                    <div class="main_info_tour_comment_formComment_right_enter">
+                                        <input type="text" placeholder="Viết bình luận" name="txtmessage" id="txtmessage"  >
+                                    </div>
+                                    <div class="main_info_tour_comment_formComment_right_icon">
+                                        <!-- <a class="bi bi-emoji-smile" href=""></a>
+                                        <a class="bi bi-card-image" href=""></a>
+                                        <button class="bi bi-send " name="txtsendComment"></button>  -->
+                                        <a href=""><button id="btnAddAction" name="submit" onClick="callCrudAction('add','')">Enter</button></a>                                       
+                                    </div>
+                                </div>
                         </div>
+                            <img src="LoaderIcon.gif" id="loaderIcon" style="display:none" />
                     </div>
                 </div>
             </div>
+        </div>
+</div>
+                            
+                                
+
+                               
 
             <!-- CỘT FOOTER -->
             <div class="col-md-3 column3">
@@ -1114,6 +1113,3 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
 </html>
 
 
-<!-- div class="container">
-            
-    </div> -->
