@@ -40,13 +40,31 @@
 </div>
 <!-- END NAV -->
 
-<form action="upload.php" method="post" enctype="multipart/form-data" style="margin-left: 150px; margin-bottom: -30px;">
-        <!-- Chọn file ảnh để upload lên tour: -->
+<!-- <form action="upload.php" method="post" enctype="multipart/form-data" style="margin-left: 150px; margin-bottom: -30px;">
+        Chọn file ảnh để upload lên tour
         <div class="container_flex" style="display: flex;">
           <input class="form-control" type="file" name="Myfile" style="width: 624px;">
           <input type="submit" class="btn btn-primary" name="Mysubmit" value="Đăng tải lên Tour" style="margin-left: 30px;">
         </div>
-    </form>
+</form>  -->
+  
+<form action="upload.php" method="post" enctype="multipart/form-data" margin-bottom: -30px;">
+          
+          <div class="alert alert-success text-center text-danger fw-bold text-uppercase" role="alert">
+            <?php
+                // Kiểm tra xem có tồn tại cái error hay không 
+                if (isset($_GET['showTB'])) 
+                {
+                  
+                echo  $_GET['showTB'];
+                }
+            ?>
+          </div>
+        <div class="container_flex" style="display: flex;">         
+          <input class="form-control" type="file" name="file" style="width: 546px; margin-left: 40px;">
+          <input type="submit" class="btn btn-primary"  name="submit" value="Xác nhận" style="margin-left: 30px; width: 546px">
+        </div>
+</form>
 <div class="container mt-5 mb-5">
   <div class="row">
   <form>
