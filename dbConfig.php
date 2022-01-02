@@ -6,6 +6,7 @@ $dbPassword = "";
 $dbName     = "hahalolo_tour";
 
 // B1 : KẾT NỐI TỚI DATABASE SERVER
+// $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
 // Check connection/ KIỂM TRA CÓ LỖI HAY KHÔNG
