@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<!-- START NAV -->
+<!-- START NAVBAR -->
 <div class="container-fluid" style="background-color: #FFFFFF;">
   <nav class="navbar navbar-expand-lg navbar-light " >
 
