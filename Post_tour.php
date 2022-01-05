@@ -22,7 +22,7 @@
 </head>
 <body>
     
-    <!-- Nav -->
+    <!-- Navbar -->
     <div class="container-fluid position-fixed" style="z-index: 1; padding: 0;" > 
         <nav class="navbar navbar-expand-lg navbar-light  " style="padding: 0; height: 65px; background-color: #fff;">
             <a class="nav-link active" aria-current="page" href=""> <img  src="img/logo_2.PNG" alt="" class="rounded-circle" style="height: 56px;"></a>
