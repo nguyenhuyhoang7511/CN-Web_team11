@@ -3,6 +3,7 @@ require_once("DBController.php");
 $db_handle = new DBController();
 
 $action = $_POST["action"];
+//kiem tra action
 if(!empty($action)) {
 	switch($action) {
 		case "add":
