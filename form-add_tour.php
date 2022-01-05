@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<!-- START NAVBAR -->
+<!-- START NAV -->
 <div class="container-fluid" style="background-color: #FFFFFF;">
   <nav class="navbar navbar-expand-lg navbar-light " >
 
@@ -61,7 +61,7 @@
             ?>
           </div>
         <div class="container_flex" style="display: flex;">         
-          <input class="form-control" type="file" name="file" style="width: 546px; margin-left: 40px;">
+          <input class="form-control" type="file" name="files[]" multiple style="width: 546px; margin-left: 40px;">
           <input type="submit" class="btn btn-primary"  name="submit" value="Xác nhận" style="margin-left: 30px; width: 546px">
         </div>
 </form>

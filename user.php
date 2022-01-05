@@ -428,7 +428,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                 </div>
 
 
-                <div class="main_card my_card_wt shadow-sm  ">
+                <div class="main_card my_card_wt shadow-sm btn_menu_hide ">
                     <!-- style="position: fixed; width: 19.5%;" -->
                     <div class="main_card_container">
 
@@ -511,7 +511,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                         </div>
                     </div>
 
-                    <div id="demo" class=" status_main_btn status_center_btn collapse ">
+                    <div id="show_timkiem" class=" status_main_btn status_center_btn_show" style="display: none;">
                         <div class="status_input_left pt-5">
                             <input style="width: 100% ;" type="text" placeholder="Điểm khởi hành" class="my_btn_status">
                         </div>
@@ -524,7 +524,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                         <div class="status_input_left pt-5">
                             <!-- <input style="width: 100% ;" type="text" placeholder = "Loại tour" class="my_btn_status"> -->
 
-                            <select class="my_btn_status_tour" name="" id="">
+                            <select class="my_btn_status_tour">
                                 <option value="">Loại tour</option>
                                 <option value="">Tất cả các loại tour</option>
                                 <option value="">Tour trong nước</option>
@@ -556,12 +556,13 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
 
                     <div class="status_main_click">
                         <div class="status_main_click_left">
-                            <button type="button" class="btn  rounded-pill my_btn_nangcao" data-bs-toggle="collapse" data-bs-target="#demo">Tìm kiếm nâng cao</button>
+                            <button id="btn_timkiemnangcao" type="button" class="btn  rounded-pill my_btn_nangcao btn_timkiemnangcao" >Tìm kiếm nâng cao</button>
+                            <button id="btn_thugon" type="button" class="btn  rounded-pill my_btn_nangcao btn_timkiemnangcao" style="display: none;" >Thu gọn</button>
 
                         </div>
                         <div class="status_main_click_right">
-                            <button type="button" class="btn  rounded-pill my_btn_datlai">Đặt lại</button>
-                            <button type="button" class="btn  rounded-pill my_btn_timkiem">Tìm kiếm</button>
+                            <button type="button" class="btn  rounded-pill my_btn_datlai" id="btn_datLai" style="display: none;">Đặt lại</button>
+                            <button type="button" class="btn  rounded-pill my_btn_timkiem" id="btn_timkiem">Tìm kiếm</button>
                         </div>
 
                     </div>
@@ -700,7 +701,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
 
                                 <!-- <div class="post-footer"> -->
                                 <a class="icon-hover">
-                                    <button id="main_Changes" type="button" class="btn btn-light my_btn_chooseInteractive btn_mg_camxuc" style="margin: top -5px; ;"> <img id="Changes_img_icon" width="auto" height="30" src="img_Interactive/img2_like.png" alt="" style="padding: 4px;"> <span id="Changes" style="font-size: 16px;">Like</span> </button>
+                                    <button id="main_Changes" type="button" class="btn btn-light my_btn_chooseInteractive btn_mg_camxuc" style="margin: top -5px; ;"> <img id="Changes_img_icon" width="auto" height="26" src="img_Interactive/img2_like.png" alt="" style="padding: 4px; margin-bottom: 4px;"> <span id="Changes" style="font-size: 16px;">Like</span> </button>
                                     <div class="box-list-icons">
                                         <div id="click_forChanges_haha" class="icon-thich">
                                             <img id="my_icon_haha" width="100%" src="img_Interactive/img_like.png" alt=""><label>Haha</label>
@@ -862,7 +863,6 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                         <div class="content_text">
                                             <b>
                                             <?php
-                                    // Kiểm tra xem có tồn tại cái error hay không 
                                     if (isset($_GET['showname'])) {
                                         echo  $_GET['showname'];
                                     }
@@ -876,9 +876,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                             <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Haha</button>                                            
                                             <span class="text-secondary">Thời gian : <?php echo $comments[$k]["time_cmt"]; ?></span>
                                         </div>
-                                        <!-- <div class="content_time">
-                                            <b href="">Haha ·</b> <b>Trả Lời ·</b> <span>3 tháng trước</span>
-                                        </div> -->
+                                       
                                     </div>
                                 </div>
                         <?php
@@ -1007,92 +1005,10 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/show_interaction.js"></script>
+    <script src="js/showIcon.js"></script>
 
-    <script>
-        // Hiển thị thông báo
-        $(document).ready(function() {
-            $("#btn_hienthi_thongbao").click(function() {
-                $("#show_thong_bao").toggle();
-            });
-        });
-
-        $("#click_container").click(function() {
-            $("#show_thong_bao").hide();
-        });
-
-        $("a[id!='btn_hienthi_thongbao']").click(function() {
-            $("#show_thong_bao").hide();
-        });
-    </script>
-
-
-    <script>
-        // Hiển thị thông báo
-        $(document).ready(function() {
-            $("#btn_hienthi_friend").click(function() {
-                $("#show_friend").toggle();
-            });
-        });
-
-        $("#click_container").click(function() {
-            $("#show_friend").hide();
-        });
-
-        $("a[id!='btn_hienthi_friend']").click(function() {
-            $("#show_friend").hide();
-        });
-    </script>
-
-
-
-    <script>
-        // Hiển thị giỏ hàng
-        $(document).ready(function() {
-            $("#btn_hienthi_giohang").click(function() {
-                $("#show_gio_hang").toggle();
-            });
-        });
-
-        $("#click_container").click(function() {
-            $("#show_gio_hang").hide();
-        });
-
-        $("a[id!='btn_hienthi_giohang']").click(function() {
-            $("#show_gio_hang").hide();
-        });
-    </script>
-
-    <script>
-        // Hiển thị đăng nhập
-
-        $(document).ready(function() {
-            $("#btn_hienthi_dangnhap").click(function() {
-                $("#show_dang_nhap").toggle();
-            });
-        });
-
-        $("#click_container").click(function() {
-            $("#show_dang_nhap").hide();
-        });
-
-        $("a[id!='btn_hienthi_dangnhap']").click(function() {
-            $("#show_dang_nhap").hide();
-        });
-    </script>
-
-    <script>
-        // Thay đổi chế độ  
-        $("#btn_thaydoi_chedo").click(function() {
-            $("body").css("background-color", "black");
-        });
-    </script>
-    <script>
-        $(".btn_class_showOption").click(function(){
-            $(".div_container_option").toggle();
-        });
-    </script>
 
 </body>
 

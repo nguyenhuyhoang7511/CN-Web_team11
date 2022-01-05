@@ -10,7 +10,15 @@
     <title>SignUp</title>
 </head>
 <body>
-    <div class="container my_container ">
+<h3 class="text-center text-danger mt-5">
+                <?php
+                // Kiểm tra xem có tồn tại cái error hay không 
+                if (isset($_GET['thongbao'])) {
+                    echo  $_GET['thongbao'];
+                }
+                ?>
+    </h3>
+    <div class="container my_container mt-5">
         <div class="row">
             <div class="col-md-6">
                 <div class="container_left_title">
@@ -21,38 +29,40 @@
 
             <div class="col-md-6">
                 <div class="container_right_form">
-                    <form class="form_login form_signUp" action="process-signup.php" method="POST">
+                    <form class="form_login form_signUp" action="process-register.php" method="POST">
                         <h6 class="text-center">Đăng Kí</h6>
                         <div class="mb-3">
-                            <input name="txtUser" type="text" placeholder="Họ và tên người dùng *" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input name="name" type="text" placeholder="Họ và tên người dùng *" class="form-control" id="name" aria-describedby="emailHelp" required>
                           </div>
+
                         <div class="mb-3">
-                          <input name="txtEmail" type="text" placeholder="Email người dùng*" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <input name="email" type="text" placeholder="Email người dùng*" class="form-control" id="email" aria-describedby="emailHelp">
                         </div>
+
                         <div class="mb-3">
-                          <input name="txtPass1" type="password" placeholder="Mật khẩu*" class="form-control" id="exampleInputPassword1">
+                          <input name="password" type="password" placeholder="Mật khẩu*" class="form-control" id="password" required ="">
                         </div>
+                        
                         <div class="mb-3">
-                            <input name="txtPass2" type="password" placeholder="Xác nhận mật khẩu*" class="form-control" id="exampleInputPassword1">
+                            <input name="cpassword" type="password" placeholder="Xác nhận mật khẩu*" class="form-control" id="cpassword" required ="">
                           </div>
                         <!-- <button type="submit" class="btn btn_dangnhap ">Đăng Kí</button> <br> -->
                         <!-- <a  id="js_btnDangKi" href="Sign_In.php" class="btn btn_dangnhap" style="color: #ffff;" onclick="alert('Đăng kí thành công')">
                             Đăng Kí
                         </a> -->
-                        <button name="btnSignUp"  class="btn btn_dangnhap" style="color: #ffff;">
-                            Đăng Kí
-                        </button>
+                        <!-- <input type="submit" name="btnRegister"  class="btn btn_dangnhap" style="color: #ffff;">Đăng Kí</input> -->
+                        <input type="submit" name="btnRegister" class="btn btn-primary">
                         <!-- <a class="link_quenMk" href="">Quên mật khẩu?</a> -->
                         <p class="dieukhoan_dịchvu">Bạn đồng ý với <span class="color_imp" style="cursor: pointer;">Điều khoản dịch vụ,Chính sách của chúng tôi</span></p>
                         <p class="link_dangki">Bạn đã có tài khoản? <a href="Sign_In.php" class="color_imp">Đăng nhập tại đây!</a></p>
                         
                         <!-- Đoạn mã PHP này sẽ hiển thị nếu người dùng nhập sai thông tin tài khoản -->
-                        <?php
+                        <!-- <?php
                             // Kiểm tra xem có tồn tại cái error hay không 
                             if(isset($_GET['error'])){
                                 echo "<h5 style = 'color:red'> {$_GET['error']} </h5>";
                             }
-                        ?>
+                        ?> -->
                       </form>
                 </div>
             </div>

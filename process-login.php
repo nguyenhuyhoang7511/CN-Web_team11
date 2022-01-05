@@ -27,10 +27,25 @@
         }
         // Nếu bỏ qua khối if tức là đã kết nối csdl thành công 
         
-        
+
+        $sql_test = " SELECT * FROM db_nguoidung WHERE email = '$email' OR ten_nguoidung = '$email' AND status = 0 ";
+    
+    
+        // Nếu thực hiện thành công trả về tập kết quả các bản ghi
+        $sql_test = mysqli_query($conn,$sql_test); // trả về số bản ghi 
+
+        if(mysqli_num_rows($sql_test) > 0)
+        {
+            // NẾU CÓ TỒN TẠI BIẾN KẾT QUẢ TỨC LÀ EMAIL HOẶC TÊN ĐĂNG NHẬP ĐÃ TỒN TẠI
+            $thongBaoLoi = "Tên đăng nhập chưa được kích hoạt";
+            header("location: form-login.php?error=$thongBaoLoi"); // Có lỗi => chuyển hướng sang 1 trang thông báo lỗi
+        }
+        else 
+        {
+
         // Bước 2: Thực hiện truy vấn
         // SỬ DỤNG KĨ THUẬT PREPARED STATEMENT
-        $sql = " SELECT * FROM db_nguoidung WHERE email = ? OR ten_nguoidung  = ? "; 
+        $sql = " SELECT * FROM db_nguoidung WHERE (email = ? OR ten_nguoidung  = ?) AND status = 1"; 
         // Kiểm tra email này có tồn tại không, nếu có : Lấy mật khẩu tương ứng của nó 
 
         $stmt = mysqli_prepare($conn,$sql); // thay vì query trực tiếp thì sử dụng kỹ thuật mysqli_prepare
@@ -39,19 +54,21 @@
 
         mysqli_stmt_bind_param($stmt, "ss",$email,$user);
 
-        $ketqua = mysqli_query($conn,$sql); 
+        $ketqua = mysqli_query($conn,$sql); // trả về số bản ghi 
+
+        echo $status;
         if(mysqli_stmt_execute($stmt))
         {
             // Lấy ra bản ghi chứa thông tin tương ứng Email
-            mysqli_stmt_bind_result($stmt,$mand,$tennd,$emailnd,$matkhaund);
+            mysqli_stmt_bind_result($stmt,$mand,$tennd,$emailnd,$matkhaund,$status,$link,$timeat);
             
-            if(mysqli_stmt_fetch($stmt))
+            if((mysqli_stmt_fetch($stmt)) && $status =1 )
             {
                  if(password_verify($pass,$matkhaund))
                 {
                     $_SESSION['isLoginOK'] = $email;
                     $show_name = $email;
-                    header("location: user.php?showname= $show_name"); 
+                    header("location: user.php?showname= $show_name");  
                 }
                 else
                 {
@@ -59,20 +76,18 @@
                     header("location: form-login.php?error=$thongBaoLoi"); // Có lỗi => chuyển hướng sang 1 trang thông báo lỗi
                 }                
             }
-            else
-            {
-                $thongBaoLoi = "Email không tồn tại";
-            header("location: form-login.php?error=$thongBaoLoi"); // Có lỗi => chuyển hướng sang 1 trang thông báo lỗi
+            // else if( mysqli_stmt_fetch($stmt)  )
+            // {
+            //     $thongBaoLoi = "Tài khoản chưa được kích hoạt";
+            //     header("location: login.php?error=$thongBaoLoi"); // Có lỗi => chuyển hướng sang 1 trang thông báo lỗi
 
+            // }
+            else{
+                $thongBaoLoi = "Tài khoản không tồn tại";
+                header("location: form-login.php?error=$thongBaoLoi"); 
             }
         }
-        else
-        {
-            $thongBaoLoi = "Email không tồn tại";
-            header("location: form-login.php?error=$thongBaoLoi"); // Có lỗi => chuyển hướng sang 1 trang thông báo lỗi            
         }
-
-        // Bước 3 : Đóng kết nối
         mysqli_close($conn);
     }
     else

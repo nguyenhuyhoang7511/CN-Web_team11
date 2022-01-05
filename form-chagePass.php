@@ -60,7 +60,7 @@
                         <a class="link_quenMk" href="">Quay lại đăng nhập</a>
                         <!-- Đoạn mã PHP này sẽ hiển thị nếu người dùng nhập sai thông tin tài khoản -->
                         
-                        
+                        <!-- <p class="link_dangki">Bạn chưa có tài khoản? <a href="Sign_up.php">Đăng ký tại đây!</a></p> -->
                       </form>
                 </div>
             </div>
