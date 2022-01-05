@@ -39,7 +39,7 @@
 
         mysqli_stmt_bind_param($stmt, "ss",$email,$user);
 
-        $ketqua = mysqli_query($conn,$sql); // trả về số bản ghi 
+        $ketqua = mysqli_query($conn,$sql); 
         if(mysqli_stmt_execute($stmt))
         {
             // Lấy ra bản ghi chứa thông tin tương ứng Email
