@@ -6,7 +6,7 @@ class DBController {
 	private $database = "hahalolo_tour";
 	
 	// private static $conn;
-	
+	//cac ham
 	function __construct() {
 		$this->conn = $this->connectDB();
 		if(!empty($this->conn)) {
