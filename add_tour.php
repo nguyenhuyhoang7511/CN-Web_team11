@@ -7,21 +7,21 @@ if(!$conn){
 
 if(isset($_FILES['image']['name']))
                 {
-                    //Get the details of the selected image
+                    //Get the details of the selected images
                     $image_name = $_FILES['image']['name'];
 
                     //Check Whether the Image is Selected or not and upload image only if selected
                     if($image_name!="")
                     {
                         // Image is SElected
-                        //A. REnamge the Image
+                        //A. REnamge the Images
                         //Get the extension of selected image (jpg, png, gif, etc.) "vijay-thapa.jpg" vijay-thapa jpg
                         $ext = end(explode('.', $image_name));
 
-                        // Create New Name for Image
+                        // Create New Name for Images
                         $image_name = "Food-Name-".rand(0000,9999).".".$ext; //New Image Name May Be "Food-Name-657.jpg"
 
-                        //B. Upload the Image
+                        //B. Upload the Images
                         //Get the Src Path and DEstinaton path
 
                         // Source path is the current location of the image
