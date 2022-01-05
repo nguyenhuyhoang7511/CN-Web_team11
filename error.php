@@ -49,6 +49,7 @@
         </div>
     </header>
     <main>
+        <!--hien thi loi -->
     <div class="container">
         <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
             <strong>Đã xảy ra lỗi. Bạn vui lòng kiểm tra lại 
