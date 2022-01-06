@@ -7,7 +7,7 @@
                 // Nếu mà chưa nhấn vào btnSignUp thì điều hướng quay lại 
                 header("location: form-signup.php") ;
             }
-            // coi mọi dữ liệu là hợp lệ là pass1 = pass2
+            
             $user = $_POST['txtUser'];
             $email = $_POST['txtEmail'];
             $pass1 = $_POST['txtPass1'];
