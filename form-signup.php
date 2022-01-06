@@ -60,7 +60,7 @@
                         <!-- <?php
                             // Kiểm tra xem có tồn tại cái error hay không 
                             if(isset($_GET['error'])){
-                                echo "<h5 style = 'color:red'> {$_GET['error']} </h5>";
+                               echo "<h5 style = 'color:red'> {$_GET['error']} </h5>";
                             }
                         ?> -->
                       </form>
