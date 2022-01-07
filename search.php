@@ -15,9 +15,9 @@
                 }
                
                     
-                    $search = "SELECT * FROM thongtinchung tc,loaitour lt,thongtinchitiet tt WHERE tc.MaTour = tt.ID and tc.LoaiTour = lt.MaLoai
-                    tc.DiaDiem like $diadiem and tt.DiemKhoiHanh like $diemkhoihanh and tt.DiemDen like $diadiem --and lt.LoaiTour like $loaitour
-                    and tc.chitiet like '%$chitiet%' and tc.SoNgayDiTour = $songayditour";
+                    $search = "SELECT * FROM thongtinchung tc,loaitour lt,thongtinchitiet tt WHERE tc.MaTour = tt.ID or tc.LoaiTour = lt.MaLoai
+                    tc.DiaDiem like $diadiem or tt.DiemKhoiHanh like $diemkhoihanh or tt.DiemDen like $diadiem or lt.LoaiTour like $loaitour
+                    or tc.chitiet like '%$chitiet%' or tc.SoNgayDiTour = $songayditour";
                     $result = mysqli_query($conn,$search);
                     $count = mysqli_num_rows($result);
                     if($count > 0){
