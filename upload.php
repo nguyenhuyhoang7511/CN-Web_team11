@@ -139,7 +139,7 @@ if(isset($_POST['submit']))
 
 <?php
 /* 
-// LỰA CHỌN UPLOAD 1 FILE
+
 // Include the database configuration file
 include 'dbConfig.php';
 $statusMsg = '';
