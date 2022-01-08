@@ -42,7 +42,9 @@
             // $mail->addCC('cc@example.com');
             // $mail->addBCC('bcc@example.com');
         
-
+            //Attachments
+            // $mail->addAttachment('documents/Demo.xlsx');         //Add attachments, tệp đính kèm
+            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
         
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
