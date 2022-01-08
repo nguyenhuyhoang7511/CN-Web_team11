@@ -2,7 +2,7 @@
 // TRƯỚC KHI CHO NGƯỜI DÙNG TRUY CẬP VÀO CẦN PHẢI KIỂM TRA (KỸ THUẬT SESSION)
 session_start();
 
-
+// Kiểm tra thẻ làm việc
 if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có thẻ làm việc)
 {
     header("location:form-login.php");
