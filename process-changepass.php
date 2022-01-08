@@ -36,7 +36,7 @@
         $sql = " SELECT * FROM db_nguoidung WHERE email = '$email' OR ten_nguoidung  = '$email' "; 
         // Kiểm tra email này có tồn tại không, nếu có : Lấy mật khẩu tương ứng của nó 
 
-        
+        // $stmt = mysqli_prepare($conn,$sql); // thay vì query trực tiếp thì sử dụng kỹ thuật mysqli_prepare
 
         // $user = $email ;
 
