@@ -96,7 +96,8 @@ if(isset($_POST['submit']))
                                 // Upload file to server 
                                 if(move_uploaded_file($_FILES["files"]["tmp_name"][$key], $targetFilePath)){ 
                                     // Image db insert sql 
-                                    $insertValuesSQL .= "('".$fileName."', NOW()),"; 
+                                    $ma_tour = $_POST['txt_matour'];
+                                    $insertValuesSQL .= "('".$fileName."', NOW() ,'".$ma_tour."'  ),"; // CHỖ THÊM GIÁ TRỊ CỦA MA_TOUR ($matour = $_POST['ma_tour'];)
                                 }else{ 
                                     $errorUpload .= $_FILES['files']['name'][$key].' | '; 
                                 } 
@@ -112,22 +113,23 @@ if(isset($_POST['submit']))
                         
                         if(!empty($insertValuesSQL)){ 
                             $insertValuesSQL = trim($insertValuesSQL, ','); 
+                            
                             // Insert image file name into database 
-                            $insert = $db->query("INSERT INTO db_images (file_name, uploaded_on) VALUES $insertValuesSQL"); 
+                            $insert = $db->query("INSERT INTO db_images (file_name, upload_on,ma_tour) VALUES $insertValuesSQL"); 
                             if($insert){ 
                                 $statusMsg = "các file đã được tải lên thành công .".$errorMsg; 
-                                header("location: form-add_tour.php?showTB= $statusMsg"); 
+                                header("location: index.php?showTB= $statusMsg"); 
                             }else{ 
                                 $statusMsg = "Đã xảy ra lỗi khi tải file - Vui lòng kiểm tra lại"; 
-                                header("location: form-add_tour.php?showTB= $statusMsg"); 
+                                header("location: index.php?showTB= $statusMsg"); 
                             } 
                         }else{ 
                             $statusMsg = "Tải lên thất bại ! Lỗi : ".$errorMsg; 
-                            header("location: form-add_tour.php?showTB= $statusMsg"); 
+                            header("location: index.php?showTB= $statusMsg"); 
                         } 
                     }else{ 
                         $statusMsg = 'Bạn chưa chọn file nào !'; 
-                        header("location: form-add_tour.php?showTB= $statusMsg"); 
+                        header("location: index.php?showTB= $statusMsg"); 
                     } 
 
             }
@@ -139,7 +141,7 @@ if(isset($_POST['submit']))
 
 <?php
 /* 
-
+// LỰA CHỌN UPLOAD 1 FILE
 // Include the database configuration file
 include 'dbConfig.php';
 $statusMsg = '';
