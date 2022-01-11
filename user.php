@@ -190,29 +190,14 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                             <img width="auto" height="45px" src="img/img_icon_nav/img_user.png" alt="">
 
 
-                            <?php
-                                        // Include the database configuration file
-                                        include 'dbConfig.php';
-
-                                        // Get images from the database
-                                        $query = $db->query("SELECT  * FROM avatar ");
-                                        
-
-                                        if($query->num_rows > 0){
-                                            while($row = $query->fetch_assoc()){
-                                                $imageURL = 'uploads/'.$row["file_name"];
-                                        ?>
-                                            <!-- <img src="<?php echo $imageURL; ?>"  class="avatar" alt="" id="img" width="250" height="250"/> -->
-                                            <!-- <img  width="100%" height="100%" alt="" style="position: absolute; z-index: 1;"> -->
-                                            <img height="45" width="45" class="rounded-circle" src="<?php echo $imageURL; ?>" alt="">
-
-                                        <?php }
-                                        }else{ ?>
-                                            <!-- <p>Vui lòng cập nhật</p> -->
-                                        <?php } ?>  
+                    
                         </a>
                         <!-- Phần hiển thị đăng nhập -->
-                        <div id="show_dang_nhap" class="show_dangnhap">
+                        <div id="show_dang_nhap" class="show_dangnhap" style="background-color: #FFFFFF;">
+                        <a class="show_dangnhap_top" style="height: 36px;" href="/Update_avatar/changeAvater.php">
+                                <img height="25px" width="auto" src="img/img_col1_info/img_hinhanh.png" alt="">
+                                <p>Thay Đổi Avatar</p>
+                            </a>
                             <a class="show_dangnhap_top" style="height: 36px;" href="">
                                 <img height="25px" width="auto" src="img/img_show_login/img_quanlydonhang.png" alt="">
                                 <p>Quản lý đơn hàng</p>
@@ -251,78 +236,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                 </ul>
             </div>
         </nav>
-        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light my-background" style= "padding-top:0;" >                
-    <div class="collapse navbar-collapse my-flex" id="navbarNav ">
-        <div class="col-md-3">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href=""> <img  src="img/pixlr-bg-result (4).png" alt="" class="rounded-circle" style="height: 60px;"></a>
-                        </li>
-                        
-                    </ul>
-                    </div>
-                    <div class="col-md-6 ;"> 
-                    <ul class="navbar-nav " style="justify-content: center;" >
-                    
-                       
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" style="text-align: center;"><img src="img/news.png" alt=""style="width: 22px;height: 22px;"></a>
-                                <a class="nav-link" href="#">Bảng tin</a>
-                            </li>
-                        
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/air-balloon.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Trải nghiệm</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/destination.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Tour</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/hotels.png" alt="" style="width: 22px;height: 22px;"></a>
-
-                            <a class="nav-link" href="#">Khách sạn</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/plane.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Vé máy bay</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/car-wash.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Thuê xe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/shopping-bag.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Mua sắm</a>
-                        </li>
-                    </ul>
-                    </div>
-                    <div class="col-md-3;" style="width: 100%;">
-                    <ul class="navbar-nav  " style="justify-content: end; align-items: center;">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#" ><img src="img/shopping-cart.png" alt="" style="width: 27px;height: 27px;"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" ><img src="img/wallet.png" alt="" style="width: 27px;height: 27px;"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><img src="img/pixlr-bg-result (1).png" alt="" style="height: 25px;" class="rounded-circle"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><img src="img/user (1).png" alt="" style="height: 50px;"></a>
-                        </li>
-                    </ul>
-                </div> 
-                </div>
-               
-
-                 
-              </nav> -->
-
     </div>
-
-
     <div id="click_container" class="container ">
         <div class="row main_content">
             <!-- CỘT 1 thông tin người dùng -->
@@ -551,27 +465,147 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                     <!-- <div class="row pt-4"> -->
                     <div class="status_main_btn pt-4">
                         <div class="status_input_left">
-                            <input style="width: 100% ;" type="text" placeholder="Bạn muốn đi đâu ?" class="my_btn_status">
+                            <!-- <input style="width: 100% ;" type="text" placeholder="Bạn muốn đi đâu ?" class="my_btn_status"> -->
+                            <select id="dia_diem" name="dia_diem" class="my_btn_status_tour" style="margin-left: 10px; ">
+                                         <!-- Truy vấn dữ liệu để Hiển thị lựa chọn Đơn vị -->
+                                         <?php
+                                             // Bước 01: Kết nối Database Server
+                                             $conn = mysqli_connect('localhost', 'root', '', 'hahalolo_tour');
+                                             if (!$conn) {
+                                                  die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                                             }
+                                             // Bước 02: Thực hiện truy vấn
+                                             $sql = "SELECT * FROM db_thongtintour";
+
+                                             $result = mysqli_query($conn, $sql);
+
+                                             // Bước 03: Xử lý kết quả truy vấn
+                                             if (mysqli_num_rows($result)) {
+                                                  while ($row = mysqli_fetch_assoc($result)) {
+                                             ?>
+                                                   <option ><?php echo $row['ma_tour']; ?></option>
+                                         <?php
+                                                  }
+                                             }
+                                             ?>
+
+                                    </select>
                         </div>
                         <div class="status_input_right">
-                            <i class="far fa-calendar-alt my-icon-calendar"></i> <input style="width: 80% ;" type="text" placeholder="MM/YYYY" class="my_btn_status" min="2000-01-02"> <i class="fas fa-times"></i>
+                            <!-- <i class="far fa-calendar-alt my-icon-calendar"></i> <input style="width: 80% ;" type="text" placeholder="MM/YYYY" class="my_btn_status" min="2000-01-02"> <i class="fas fa-times"></i> -->
+                            <select id="ngaythang" name="ngaythang" class="my_btn_status_tour" style="margin-left: 10px; ">
+                                         <!-- Truy vấn dữ liệu để Hiển thị lựa chọn Đơn vị -->
+                                         <?php
+                                             // Bước 01: Kết nối Database Server
+                                             $conn = mysqli_connect('localhost', 'root', '', 'hahalolo_tour');
+                                             if (!$conn) {
+                                                  die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                                             }
+                                             // Bước 02: Thực hiện truy vấn
+                                             $sql = "SELECT * FROM db_thongtintour";
+
+                                             $result = mysqli_query($conn, $sql);
+
+                                             // Bước 03: Xử lý kết quả truy vấn
+                                             if (mysqli_num_rows($result)) {
+                                                  while ($row = mysqli_fetch_assoc($result)) {
+                                             ?>
+                                                   <option ><?php echo $row['chu_tour']; ?></option>
+                                         <?php
+                                                  }
+                                             }
+                                             ?>
+
+                                    </select>
                         </div>
                     </div>
 
                     <div id="show_timkiem" class=" status_main_btn status_center_btn_show" style="display: none;">
                         <div class="status_input_left pt-5">
-                            <input style="width: 100% ;" type="text" placeholder="Điểm khởi hành" class="my_btn_status">
+                            <!-- <input style="width: 100% ;" type="text" placeholder="Điểm khởi hành" class="my_btn_status"> -->
+                            <select id="loai_tour" name="loai_tour" class="my_btn_status_tour" style="margin-left: 10px; ">
+                                         <!-- Truy vấn dữ liệu để Hiển thị lựa chọn Đơn vị -->
+                                         <?php
+                                             // Bước 01: Kết nối Database Server
+                                             $conn = mysqli_connect('localhost', 'root', '', 'hahalolo_tour');
+                                             if (!$conn) {
+                                                  die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                                             }
+                                             // Bước 02: Thực hiện truy vấn
+                                             $sql = "SELECT * FROM db_thongtintour";
+
+                                             $result = mysqli_query($conn, $sql);
+
+                                             // Bước 03: Xử lý kết quả truy vấn
+                                             if (mysqli_num_rows($result)) {
+                                                  while ($row = mysqli_fetch_assoc($result)) {
+                                             ?>
+                                                   <option ><?php echo $row['loai_tour']; ?></option>
+                                         <?php
+                                                  }
+                                             }
+                                             ?>
+
+                                    </select>
                         </div>
                         <div class="status_input_left pt-5">
-                            <input style="width: 100% ;" type="text" placeholder="Điểm đến" class="my_btn_status">
+                            <!-- <input style="width: 100% ;" type="text" placeholder="Điểm đến" class="my_btn_status"> -->
+                            <select id="loai_tour" name="loai_tour" class="my_btn_status_tour" style="margin-left: 10px; ">
+                                         <!-- Truy vấn dữ liệu để Hiển thị lựa chọn Đơn vị -->
+                                         <?php
+                                             // Bước 01: Kết nối Database Server
+                                             $conn = mysqli_connect('localhost', 'root', '', 'hahalolo_tour');
+                                             if (!$conn) {
+                                                  die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                                             }
+                                             // Bước 02: Thực hiện truy vấn
+                                             $sql = "SELECT * FROM db_thongtintour";
+
+                                             $result = mysqli_query($conn, $sql);
+
+                                             // Bước 03: Xử lý kết quả truy vấn
+                                             if (mysqli_num_rows($result)) {
+                                                  while ($row = mysqli_fetch_assoc($result)) {
+                                             ?>
+                                                   <option ><?php echo $row['loai_tour']; ?></option>
+                                         <?php
+                                                  }
+                                             }
+                                             ?>
+
+                                    </select>
                         </div>
                         <div class="status_input_left pt-5">
-                            <input style="width: 100% ;" type="text" placeholder="Chủ đề tour" class="my_btn_status">
+                            <!-- <input style="width: 100% ;" type="text" placeholder="Chủ đề tour" class="my_btn_status"> -->
+                            <select id="ten_tour" name="ten_tour" class="my_btn_status_tour" style="margin-left: 10px; ">
+                                         <!-- Truy vấn dữ liệu để Hiển thị lựa chọn Đơn vị -->
+                                         <?php
+                                             // Bước 01: Kết nối Database Server
+                                             $conn = mysqli_connect('localhost', 'root', '', 'hahalolo_tour');
+                                             if (!$conn) {
+                                                  die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                                             }
+                                             // Bước 02: Thực hiện truy vấn
+                                             $sql = "SELECT * FROM db_thongtintour";
+
+                                             $result = mysqli_query($conn, $sql);
+
+                                             // Bước 03: Xử lý kết quả truy vấn
+                                             if (mysqli_num_rows($result)) {
+                                                  while ($row = mysqli_fetch_assoc($result)) {
+                                             ?>
+                                                   <option ><?php echo $row['ten_tour']; ?></option>
+                                         <?php
+                                                  }
+                                             }
+                                             ?>
+
+                                    </select>
                         </div>
                         <div class="status_input_left pt-5">
                             <!-- <input style="width: 100% ;" type="text" placeholder = "Loại tour" class="my_btn_status"> -->
 
-                            <select class="my_btn_status_tour">
+                            <select class="my_btn_status_tour" style="margin-left: 10px; ">
                                 <option value="">Loại tour</option>
                                 <option value="">Tất cả các loại tour</option>
                                 <option value="">Tour trong nước</option>
@@ -579,10 +613,42 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                             </select>
                         </div>
                         <div class="status_input_left pt-5">
-                            <input style="width: 100% ;" type="text" placeholder="Số ngày đi tour" class="my_btn_status">
+                            <!-- <input style="width: 100% ;" type="text" placeholder="Số ngày đi tour" class="my_btn_status">-->
+                            <select class="my_btn_status_tour" style="margin-left: 10px; ">
+                                <option value="">1 ngày - 1 đêm</option>
+                                <option value="">2 ngày - 1 đêm</option>
+                                <option value="">3 ngày - 2 đêm</option>
+                                <option value="">4 ngày - 3 đêm</option>
+                                <option value="">5 ngày - 4 đêm</option>
+                            </select>
+                            
                         </div>
                         <div class="status_input_left pt-5">
-                            <input style="width: 100% ;" type="text" placeholder="Khoảng giá" class="my_btn_status">
+                            <!-- <input style="width: 100% ;" type="text" placeholder="Khoảng giá" class="my_btn_status"> -->
+                            <select id="thoi_gian" name="thoi_gian" class="my_btn_status_tour" style="margin-left: 10px; ">
+                                         <!-- Truy vấn dữ liệu để Hiển thị lựa chọn Đơn vị -->
+                                         <?php
+                                             // Bước 01: Kết nối Database Server
+                                             $conn = mysqli_connect('localhost', 'root', '', 'hahalolo_tour');
+                                             if (!$conn) {
+                                                  die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+                                             }
+                                             // Bước 02: Thực hiện truy vấn
+                                             $sql = "SELECT * FROM db_thongtintour";
+
+                                             $result = mysqli_query($conn, $sql);
+
+                                             // Bước 03: Xử lý kết quả truy vấn
+                                             if (mysqli_num_rows($result)) {
+                                                  while ($row = mysqli_fetch_assoc($result)) {
+                                             ?>
+                                                   <option ><?php echo $row['thoi_gian']; ?></option>
+                                         <?php
+                                                  }
+                                             }
+                                             ?>
+
+                                    </select>
                         </div>
 
                         <!-- 2 cái checkbox -->
@@ -603,13 +669,13 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
 
                     <div class="status_main_click">
                         <div class="status_main_click_left">
-                            <button id="btn_timkiemnangcao" type="button" class="btn  rounded-pill my_btn_nangcao btn_timkiemnangcao" >Tìm kiếm nâng cao</button>
+                            <button id="btn_timkiemnangcao" type="button" class="btn  rounded-pill my_btn_nangcao btn_timkiemnangcao" >Tìm kiếm nhanh</button>
                             <button id="btn_thugon" type="button" class="btn  rounded-pill my_btn_nangcao btn_timkiemnangcao" style="display: none;" >Thu gọn</button>
 
                         </div>
                         <div class="status_main_click_right">
                             <button type="button" class="btn  rounded-pill my_btn_datlai" id="btn_datLai" style="display: none;">Đặt lại</button>
-                            <button type="button" class="btn  rounded-pill my_btn_timkiem" id="btn_timkiem">Tìm kiếm</button>
+                            <button type="button" class="btn  rounded-pill my_btn_timkiem" id="btn_timkiem">Liên hệ</button>
                         </div>
 
                     </div>
@@ -617,25 +683,6 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                     <div class="status_main_click_tracuu">
                         <a href="">Tra cứu mã đặt Tour</a>
                     </div>
-
-                    <!-- <div class=" container status_search_btn">
-                            <div class="row ms-5 mt-5 ">
-                                <div class="col">
-                                    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="collapse" data-bs-target="#demo">Thu gọn</button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="btn btn-primary rounded-pill ms-5 me-3">Đặt lại</button>
-                                    <button type="button" class="btn btn-primary rounded-pill">Tìm kiếm</button>
-                                    
-                                </div>
-                            </div>
-                            
-                            <div class="row pb-5 ">
-                            <a href="" class="ms-5 mt-5">Tra cữu mã đặt Tour</a>
-                            </div>
-
-                        </div> -->
-                    <!-- </div> -->
                 </div>
 
                 <!-- Info1 -->
@@ -643,8 +690,8 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                     <div class="main_info_tour_container">
 
                         <div class="main_info_tour_header">
-                            <div class="main_info_tour_header_name">
-                                <span><img src="img/infor_tour/logo_user.webp" alt=""></span>
+                            <div class="main_info_tour_header_name ">
+                                <span><img class="rounded-circle" src="img/infor_tour/logo_user.webp" alt=""></span>
                                 <b>Tuấn Dũng Travel</b>
                             </div>
 
@@ -692,9 +739,9 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                         </div>
 
                         <div class="main_info_tour_content">
-                            <p class="tour">Tour Miền Trung</p>
+                            <p class="tour">Vũ Xuân Huy</p>
                             <div class="main_info_tour_content_title">
-                                <b class="title">007: Tour Đà Nẵng - Bà Nà - Cù Lao Chàm - Hội An (3N2Đ)</b>
+                                <b class="title">Tour Đà Nẵng - Huế</b>
                             </div>
 
                             <div class="main_info_tour_content_city">
@@ -707,9 +754,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                             </div>
                             <div class="main_info_tour_content_text">
                                 <p>Đến Đà Nẵng, du khách sẽ được hoà mình vào làn nước mát lạnh của biển trong những ngày hè oi bức, được tham gia
-                                    vào các trò chơi thể thao trên biển,… Đến Đà Nẵng để từ đó xuất phát đến những điểm tham quan du lịch nổi tiếng:
-                                    Phố cổ đèn lồng Hội An,
-                                    Bà Nà 4 mùa Xuân Hạ Thu Đông, viếng chùa Linh Ứng, viếng Ngũ Hành Sơn, vọng về Thành phố từ Bán đảo Sơn Trà…</p>
+                                    vào các trò chơi thể thao trên biển,… Đến Đà Nẵng để từ đó xuất phát đến những điểm tham quan du lịch nổi tiếng
 
                             </div>
 
@@ -1025,7 +1070,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
 
                <div class="main_info_tour_header">
                    <div class="main_info_tour_header_name">
-                   <span><img src="img/infor_tour/logo_user.webp" alt=""></span>
+                   <span><img class="rounded-circle" src="img/infor_tour/logo_user.webp" alt=""></span>
                       <b><?php echo $row['chu_tour'];?></b>
                    </div>
                    
@@ -1037,7 +1082,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
                        <div class="carousel-inner">
                        <div class="carousel-item active">
-                            <img src="crud_admin/uploads/no_image.jpg" class="d-block w-100" alt="Loading !!!">
+                            <img src="crud_admin/uploads/img4.webp" class="d-block w-100" alt="Loading !!!">
                         </div>
   
 
