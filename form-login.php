@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style_login.css">
     <title>SignIn</title>
 </head>
-<body></body>
+<body>
     <div class="container my_container ">
         <div class="row">
             <div class="col-md-6">
@@ -47,7 +47,7 @@
                         <button name="btnLogin"  class="btn btn_dangnhap" style="color: #ffff;">
                             Đăng Nhập
                         </button>
-                        <a class="link_quenMk" href="">Quên mật khẩu?</a>
+                        <a class="link_quenMk" href="form-chagePass.php">Đổi mật khẩu</a>
                         <!-- Đoạn mã PHP này sẽ hiển thị nếu người dùng nhập sai thông tin tài khoản -->
                         
                         <p class="link_dangki">Bạn chưa có tài khoản? <a href="form-signup.php">Đăng ký tại đây!</a></p>
@@ -74,6 +74,7 @@
             </div>
         </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="js/show_passWord.js"></script>
 </body>
