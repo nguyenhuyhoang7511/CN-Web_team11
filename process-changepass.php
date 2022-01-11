@@ -66,7 +66,7 @@
                 else
                 {
                     $thongBaoLoi = "Bạn nhập thông tin email hoặc mật khẩu chưa chính xác";
-                    header("location: form-login.php?error=$thongBaoLoi"); // Có lỗi => chuyển hướng sang 1 trang thông báo lỗi
+                    header("location: form-changePass.php?error=$thongBaoLoi"); // Có lỗi => chuyển hướng sang 1 trang thông báo lỗi
                 }                
             // }
             // else
@@ -79,7 +79,7 @@
         else
         {
             $thongBaoLoi = "Email không tồn tại";
-            header("location: form-login.php?error=$thongBaoLoi"); // Có lỗi => chuyển hướng sang 1 trang thông báo lỗi            
+            header("location: form-changePass.php.php?error=$thongBaoLoi"); // Có lỗi => chuyển hướng sang 1 trang thông báo lỗi            
         }
 
         // Bước 3 : Đóng kết nối
@@ -88,7 +88,7 @@
     else
     {
         //Đây là trường hợp người dùng chưa ấn vào nút submit thì bắt họ đăng nhập lại
-        header("location:form-login.php");
+        header("location:form-changePass.php");
     }
 
 

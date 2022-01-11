@@ -21,7 +21,7 @@
     <div class="container my_container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <div class="container_left_title">
+                <div class="container_left_title" style="margin-top: 70px;">
                     <img width="625" height="auto" src="img/img_show_login/img_page_login.PNG" alt="">
                 </div>
 
@@ -51,16 +51,18 @@
                             Đăng Kí
                         </a> -->
                         <!-- <input type="submit" name="btnRegister"  class="btn btn_dangnhap" style="color: #ffff;">Đăng Kí</input> -->
-                        <input type="submit" name="btnRegister" class="btn btn-primary">
+                        <!-- <input type="submit" name="btnRegister" class="btn btn-primary"> -->
                         <!-- <a class="link_quenMk" href="">Quên mật khẩu?</a> -->
+                        <input type="submit" name="btnRegister"  id="btnRegister" class="btn btn_dangnhap" style="color: #ffff;" value="Đăng kí">
+                            
                         <p class="dieukhoan_dịchvu">Bạn đồng ý với <span class="color_imp" style="cursor: pointer;">Điều khoản dịch vụ,Chính sách của chúng tôi</span></p>
-                        <p class="link_dangki">Bạn đã có tài khoản? <a href="Sign_In.php" class="color_imp">Đăng nhập tại đây!</a></p>
+                        <p class="link_dangki">Bạn đã có tài khoản? <a href="form-login.php" class="color_imp">Đăng nhập tại đây!</a></p>
                         
                         <!-- Đoạn mã PHP này sẽ hiển thị nếu người dùng nhập sai thông tin tài khoản -->
                         <!-- <?php
                             // Kiểm tra xem có tồn tại cái error hay không 
                             if(isset($_GET['error'])){
-                               echo "<h5 style = 'color:red'> {$_GET['error']} </h5>";
+                                echo "<h5 style = 'color:red'> {$_GET['error']} </h5>";
                             }
                         ?> -->
                       </form>
