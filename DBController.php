@@ -7,7 +7,7 @@ class DBController {
 	
 	// private static $conn;
 	
-	function __construct() {
+	 function __construct() {
 		$this->conn = $this->connectDB();
 		if(!empty($this->conn)) {
 		    $this->selectDB();
