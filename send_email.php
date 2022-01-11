@@ -49,7 +49,7 @@
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = '[Hahalolo_tour.com] Active your account'; // tiêu đề thư
-            $mail->Body    = 'Chào mừng bạn đến với hahalolo_Tour <3 Để sử dụng tài khoản,' . $link . 'để kích hoạt'; // Nội dung thư
+            $mail->Body    = 'Chào mừng bạn đến với hahalolo_Tour <3 <br> Để sử dụng tài khoản, ' . $link . 'để kích hoạt'; // Nội dung thư
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         
             if($mail->send())
