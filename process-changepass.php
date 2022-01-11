@@ -62,6 +62,8 @@
                     $pass_hash = password_hash($newpass, PASSWORD_DEFAULT) ; 
                     $sql02 = " UPDATE db_nguoidung set mat_khau = '$pass_hash' WHERE ten_nguoidung = '$email' ";
                     $ketqua02 = mysqli_query($conn,$sql02);
+                    $ThongBao = "Đổi mật khẩu thành công";
+                    header("location: form-changePass.php?error=$ThongBao");
                 }
                 else
                 {
