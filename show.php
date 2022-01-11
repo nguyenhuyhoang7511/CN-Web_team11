@@ -7,7 +7,7 @@ include 'dbConfig.php';
 $query = $db->query("SELECT * FROM db_images ORDER BY uploaded_on DESC");
 
 if($query->num_rows > 0){
-    while($row = $query->fetch_assoc()){
+     while($row = $query->fetch_assoc()){
         $imageURL = 'uploads/'.$row["file_name"];
 ?>
     <img src="<?php echo $imageURL; ?>" alt="" />
