@@ -45,7 +45,7 @@
         // $result = mysqli_query($conn,$sql);
 
         $ketqua = mysqli_query($conn,$sql); // trả về số bản ghi 
-        if(mysqli_num_rows($ketqua) > 0)
+         if(mysqli_num_rows($ketqua) > 0)
         {
             // Lấy ra bản ghi chứa thông tin tương ứng Email
             // mysqli_stmt_bind_result($stmt,$mand,$tennd,$emailnd,$matkhaund);
