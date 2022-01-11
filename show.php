@@ -1,7 +1,7 @@
 <!-- 
 <?php
 // Include the database configuration file
-include 'dbConfig.php';
+ include 'dbConfig.php';
 
 // Get images from the database
 $query = $db->query("SELECT * FROM db_images ORDER BY uploaded_on DESC");
