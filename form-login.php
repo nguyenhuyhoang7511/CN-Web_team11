@@ -21,7 +21,7 @@
 
             <div class="col-md-6">
                 <div class="container_right_form">
-                    <form class="form_login" action="process-login.php" method="POST">
+                     <form class="form_login" action="process-login.php" method="POST">
                         <h6 class="text-center">Đăng Nhập</h6>
                         <div class="mb-3">
                           <input name="txtUser" type="text" placeholder="Email hoặc số điện thoại*" class="form-control input_taikhoan" id="exampleInputEmail1" aria-describedby="emailHelp">
