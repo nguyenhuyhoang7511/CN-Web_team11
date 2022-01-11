@@ -12,7 +12,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
 <html lang="en">
 
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/logo_title/logo_title.png" type="image/x-icon" />
@@ -188,6 +188,28 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                     <li class="nav-item">
                         <a id="btn_hienthi_dangnhap" class="nav-link btn_hienthi_dangnhap" href="#" style="text-align: center;">
                             <img width="auto" height="45px" src="img/img_icon_nav/img_user.png" alt="">
+
+
+                            <?php
+                                        // Include the database configuration file
+                                        include 'dbConfig.php';
+
+                                        // Get images from the database
+                                        $query = $db->query("SELECT  * FROM avatar ");
+                                        
+
+                                        if($query->num_rows > 0){
+                                            while($row = $query->fetch_assoc()){
+                                                $imageURL = 'uploads/'.$row["file_name"];
+                                        ?>
+                                            <!-- <img src="<?php echo $imageURL; ?>"  class="avatar" alt="" id="img" width="250" height="250"/> -->
+                                            <!-- <img  width="100%" height="100%" alt="" style="position: absolute; z-index: 1;"> -->
+                                            <img height="45" width="45" class="rounded-circle" src="<?php echo $imageURL; ?>" alt="">
+
+                                        <?php }
+                                        }else{ ?>
+                                            <!-- <p>Vui lòng cập nhật</p> -->
+                                        <?php } ?>  
                         </a>
                         <!-- Phần hiển thị đăng nhập -->
                         <div id="show_dang_nhap" class="show_dangnhap">
@@ -203,7 +225,7 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                         cho đôi mắt được nghỉ ngơi</span>
                                 </p>
                             </a>
-                            <a class="show_dangnhap_top" href="home_page.php">
+                            <a class="show_dangnhap_top" href="index.php">
                                 <img height="25px" width="auto" src="img/img_show_login/img_dangnhap.png" alt="">
                                 <p>Đăng Xuất</p>
                             </a>
@@ -309,17 +331,41 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                 <div class="main_card_infoUser">
                     <div class="main_card_infoUser_name">
                         <div class="main_card_infoUser_name_left ">
-                            <img height="45" class="rounded-circle" src="img/img_col1_info/avt_user.png" alt="">
+                            
+                            <?php
+                                        // Include the database configuration file
+                                        include 'dbConfig.php';
+
+                                        // Get images from the database
+                                        $query = $db->query("SELECT  * FROM avatar ");
+                                        
+
+                                        if($query->num_rows > 0){
+                                            while($row = $query->fetch_assoc()){
+                                                $imageURL = 'uploads/'.$row["file_name"];
+                                        ?>
+                                            <!-- <img src="<?php echo $imageURL; ?>"  class="avatar" alt="" id="img" width="250" height="250"/> -->
+                                            <!-- <img  width="100%" height="100%" alt="" style="position: absolute; z-index: 1;"> -->
+                                            <img height="45" width="45" class="rounded-circle" src="<?php echo $imageURL; ?>" alt="" >
+
+                                        <?php }
+                                        }else{ ?>
+                                            <!-- <p>Vui lòng cập nhật</p> -->
+                                        <?php } ?>                            
                         </div>
 
                         <div class="main_card_infoUser_name_right">
                             <h6><b>
-                                    <?php
+                                <!-- <input type="text" id="txtShowname" value=" -->
+                                <?php
                                     // Kiểm tra xem có tồn tại cái error hay không 
-                                    if (isset($_GET['showname'])) {
+                                    if (isset($_GET['showname'])) 
+                                    {
                                         echo  $_GET['showname'];
                                     }
-                                    ?>
+                                    ?>                                                                                            
+                                <!-- "> -->
+                                    
                                 </b></h6>
                             <!-- <?php
                                     // Bước 01: Kết nối Database Server
@@ -435,9 +481,10 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                         <div class="main_card_address">
                             <h6><b>Salavan, LA</b></h6>
                         </div>
-                        <div class="main_card_time">
-                            <div class="update_time">
-                                Thứ tư, 15/12/2021
+                        <div class="main_card_time">                            
+                            <div class="main_card_time">
+                                <div class="update_time" id="show_date">
+                                </div>
                             </div>
                         </div>
 
@@ -734,16 +781,36 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                         </div>
 
                         <!-- Comment1 -->
-                        <div class="main_info_tour_comment">
-                            
+    
+                        
+                <div class="main_info_tour_comment">                            
                             <div class="main_info_tour_comment_user " >
                                     <div class="comment_user_avatar">
-                                    <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_dangthihuong.webp" alt="">
+                                    <!-- <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_dangthihuong.webp" alt=""> -->
+                                    <img width="36" height="36" class="rounded-circle" src="img/user_comment/img_avtUser.png" alt="">
                                     </div>
                                     <div class="comment_user_content">
                                         <div class="content_text">
-                                            <b>Đặng Thị Hường</b>
-                                            <p><div class="message-content">Tour này nhiều ưu đãi quá, tuyệt vời</div></p>
+                                            <b>Lê Khắc Minh Đức</b>
+                                            <p><div class="message-content">Tour này có được trả góp không vậy mọi người ??</div></p>
+                                        </div>
+                                        <div class="btn_show_option">
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnEditAction text-secondary ">Sửa</button>
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Xóa</button>                                            
+                                            <button style="border: none; background-color: unset; " class=" fw-bold btnDeleteAction  text-secondary  btn-sm" >Haha</button>                                            
+                                            <span class="text-secondary">Thời gian : 2 tuần trước</span>
+                                        </div>                                        
+                                    </div>
+                            </div>
+                            <div class="main_info_tour_comment_user " >
+                                    <div class="comment_user_avatar">
+                                    <!-- <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_dangthihuong.webp" alt=""> -->
+                                    <img width="36" height="36" class="rounded-circle" src="img/user_comment/img_avtUser.png" alt="">
+                                    </div>
+                                    <div class="comment_user_content">
+                                        <div class="content_text">
+                                            <b>Nguyễn Huy Hoàng</b>
+                                            <p><div class="message-content">Có rất nhiều ưu đãi , Đà Nẫng thuật tuyệt vời</div></p>
                                         </div>
                                         <div class="btn_show_option">
                                             <button style="border: none; background-color: unset; " class=" fw-bold btnEditAction text-secondary ">Sửa</button>
@@ -756,12 +823,13 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                             <!-- comment2 -->                    
                             <div class="main_info_tour_comment_user " >
                                     <div class="comment_user_avatar">
-                                    <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_vannguyen.webp" alt="">
+                                    <!-- <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_vannguyen.webp" alt=""> -->
+                                    <img width="36" height="36" class="rounded-circle" src="img/user_comment/img_avtUser.png" alt="">
                                     </div>
                                     <div class="comment_user_content">
                                         <div class="content_text">
-                                            <b>Vân Nguyễn</b>
-                                            <p><div class="message-content">Có tour nào nữa không ạ ??</div></p>
+                                            <b>Nguyễn Ngọc Lâm</b>
+                                            <p><div class="message-content">Có rất nhiều ưu đãi, giá cả hợp lý</div></p>
                                         </div>
                                         <div class="btn_show_option">
                                             <button style="border: none; background-color: unset; " class=" fw-bold btnEditAction text-secondary ">Sửa</button>
@@ -810,12 +878,16 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                 $('#frmAdd').show();
                             }
 
-                            function callCrudAction(action, id) {
+                            function callCrudAction(action, id) 
+                            {
                                 $("#loaderIcon").show();
                                 var queryString;
+                                // var nameUS = $('#txtShowname').val();
+                                
                                 switch (action) {
                                     case "add":
                                         queryString = 'action=' + action + '&txtmessage=' + $("#txtmessage").val();
+                                        // nameUS = 'action=' + action + '&txtmessage=' + $("#txtmessage").val();
                                         break;
                                     case "edit":
                                         queryString = 'action=' + action + '&message_id=' + id + '&txtmessage=' + $("#txtmessage_" + id).val();
@@ -824,7 +896,8 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                         queryString = 'action=' + action + '&message_id=' + id;
                                         break;
                                 }
-                                jQuery.ajax({
+                                
+                                $.ajax({
                                     url: "crud_action.php",
                                     data: queryString,
                                     type: "POST",
@@ -848,6 +921,26 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                     error: function() {}
                                 });
                             }
+
+                            // $(document).on('click', '#btnAddAction', function(){  
+                            //     // var employee_id = $(this).attr("id");  
+                            //     // var  nameUS = "Tên người dùng" ;
+                            //     // queryString = 
+
+
+                            //     var nameUS = $('#txtShowname').val();
+                            //     nameUS = 'action=' + action + '&txtmessage=' + $("#txtmessage").val();
+                            //     $.ajax({  
+                            //             url: "crud_action.php",
+                            //             method:"POST",  
+                            //             data:{nameUS:nameUS},  
+                            //             success:function(data){  // HIỂN THỊ DỮ LIỆU LÊN FORM SỬA
+                            //                 // $('#employee_table').html(data);
+                            //                 $('#show_name').text(data);
+
+                            //             }  
+                            //     });  
+                            // }); 
                         </script>                            
             <div class="form_style">
                 <div id="comment-list-box">
@@ -862,11 +955,12 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                     <div class="comment_user_content">
                                         <div class="content_text">
                                             <b>
+                                                <p id="show_name"></p>
                                             <?php
-                                    if (isset($_GET['showname'])) {
-                                        echo  $_GET['showname'];
-                                    }
-                                    ?>
+                                            if (isset($_GET['showname'])) {
+                                                echo  $_GET['showname'];
+                                            }
+                                            ?>
                                             </b>
                                             <p><div class="message-content"><?php echo $comments[$k]["message"]; ?></div></p>
                                         </div>
@@ -893,6 +987,8 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                                 <div class="main_info_tour_comment_formComment_right">
                                     <div class="main_info_tour_comment_formComment_right_enter">
                                         <input type="text" placeholder="Viết bình luận" name="txtmessage" id="txtmessage"  >
+                                        <!-- <input type="text" value="Nguyeenx Hoang" name="txtName" id="txtName"  > -->
+
                                     </div>
                                     <div class="main_info_tour_comment_formComment_right_icon">
                                         <!-- <a class="bi bi-emoji-smile" href=""></a>
@@ -907,12 +1003,207 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
                 </div>
             </div>
         </div>
-</div>
-                            
-                                
 
+
+
+        <!-- info2 -->
+        <?php
+            $conn = mysqli_connect('localhost','root','','hahalolo_tour');
+            if(!$conn){
+                die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+           }
+           $sql = "SELECT * FROM db_thongtintour";
+           $result = mysqli_query($conn,$sql);
+           if(mysqli_num_rows($result) > 0){
+               while($row = (mysqli_fetch_assoc($result))){
+                   $id_tour = $row['ma_tour'];
+       ?>
+               
+       <!-- Info1 -->
+       <div class="main_info_tour">
+           <div class="main_info_tour_container">
+
+               <div class="main_info_tour_header">
+                   <div class="main_info_tour_header_name">
+                   <span><img src="img/infor_tour/logo_user.webp" alt=""></span>
+                      <b><?php echo $row['chu_tour'];?></b>
+                   </div>
+                   
+                   <button type="button" class="btn  rounded-pill my_btn_nangcao" ><span><i class="far fa-laugh-beam"></i>  Haha trang</span></button>
+
+               </div>
+
+               <div class="main_info_tour_Carousel ">
+                   <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+                       <div class="carousel-inner">
+                       <div class="carousel-item active">
+                            <img src="crud_admin/uploads/no_image.jpg" class="d-block w-100" alt="Loading !!!">
+                        </div>
+  
+
+
+                            <?php
+                            // Include the database configuration file
+                            include 'dbConfig.php';
+
+                            // Get images from the database
+                            $query = $db->query("SELECT * FROM db_images WHERE ma_tour = '$id_tour'");
+
+                            if($query->num_rows > 0){
+                                while($row1 = $query->fetch_assoc()){
+                                    $imageURL = 'crud_admin/uploads/'.$row1["file_name"];
+                                    
+                            ?>
+
+                                <div class="carousel-item">
+                                <img src="<?php echo $imageURL; ?>" alt="" class="d-block w-100" alt="..." />
+                                </div>
+                            <?php }
+                            }else{ ?>
+                                <p>No image(s) found...</p>
+                            <?php } ?>
+                       </div>
+                       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                           <span class="visually-hidden">Previous</span>
+                       </button>
+                       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                           <span class="visually-hidden">Next</span>
+                       </button>
+                     </div>
+               </div>
+
+               <div class="main_info_tour_content">
+                   <p class="tour"><?php echo $row['ten_tour'] ?></p>
+                   <div class="main_info_tour_content_title">
+                       <b class="title"><?php echo $row['loai_tour']; ?></b>
+                   </div>
+
+                   <div class="main_info_tour_content_city">
+                       <div class="main_info_tour_content_city_flex">
+                       <i class="fas fa-map-marker-alt"></i> <b><?php echo $row['dia_diem']; ?></b>
+                       </div>
+                       <div class="main_info_tour_content_city_flex">
+                           <i class="far fa-calendar-alt"></i> <b><?php echo $row['thoi_gian'];?></b>
+                       </div>
+                   </div>
+                   <div class="main_info_tour_content_text">
+                       <p><?php echo $row['mo_ta'] ?></p>
+                
+                       </div>
+
+                   <div class="main_info_tour_content_price">
+                       <div class="main_info_tour_content_price_left">
+                           <b>Giá chỉ từ </b>
+                           <p class="prince"><?php echo $row['gia_tour']; ?></p>
+                       </div>
+                       <div class="main_info_tour_content_price_rigth">
+                           <button type="button" class="btn  rounded-pill my_btn_nangcao btn_xemnhanh" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" ><span> Xem nhanh <i class="fas fa-chevron-right"></i></span></button>
+
+                           <div class="offcanvas offcanvas-end my_offcanvas" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" >
+                           <!-- <div class="offcanvas-header">
+                               <h5 id="offcanvasRightLabel">Viết Code tại đây</h5>
+                               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                           </div>
+                           <div class="offcanvas-body">
                                
+                           </div> -->
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="main_info_tour_showInteractive">
+                   <div class="main_info_tour_showInteractive_left">
+                       <i class="far fa-thumbs-up"></i> 
+                       <p> Phùng Bảo Quyên, Sỹ Quân và 19 người khác</p>
+                   </div>
+                   <div class="main_info_tour_showInteractive_right">
+                       <p>2 Bình luận</p>
+                       <p>2 Lượt chia sẻ.</p>
+                   </div>
+               </div>
+               <div class="main_info_tour_chooseInteractive">
+                   <div class="sub_main_info_tour_chooseInteractive">
+                   
+                   <!-- <div class="post-footer"> -->
+                       <a class="icon-hover" href="#">
+                           <button type="button" class="btn btn-light my_btn_chooseInteractive btn_mg_camxuc" style="margin: top -5px; ;"> <img  width="auto" height="30" src="img_Interactive/img2_like.png" alt="" style="padding: 5px;"> Like</button>
+                           <div class="box-list-icons">
+                               <div class="icon-thich">
+                                   <img  width="100%" src="img_Interactive/img_like.png" alt=""><label>Haha</label>
+                               </div>
+                               <div class="icon-yeuthich">
+                                   <img  width="100%" src="img_Interactive/img_tim.PNG" alt=""><label>Love</label>
+                               </div>
+                               <div class="icon-haha">
+                                   <img  width="100%" src="img_Interactive/img_haha.png" alt=""> <label>Lolo</label>
+                               </div>
+                               <div class="icon-wow">
+                                   <img  width="100%" src="img_Interactive/img_wow.png" alt=""> <label>Surprise</label>
+                               </div>
+                               <div class="icon-buon">
+                                   <img  width="100%" src="img_Interactive/img_sad.png" alt=""> <label>Sad</label>
+                               </div>
+                               <div class="icon-phanno">
+                                   <img  width="100%" src="img_Interactive/img_phanno.png" alt=""> <label>Angry</label>
+                               </div>
+                           </div>
+                       </a>
+                   <!-- </div> -->
+                   </div>
+                   <div class="sub_main_info_tour_chooseInteractive">
+                   <button type="button" class="btn btn-light my_btn_chooseInteractive "><i class="far fa-comment-alt"></i> Bình Luận</button>
+                   </div>
+                   <div class="sub_main_info_tour_chooseInteractive">
+                   <button type="button" class="btn btn-light my_btn_chooseInteractive "><i class="far fa-share-square"></i> Chia sẻ</button>
+                   </div>
+               </div>
+               <!-- Comment1 -->
+               <div class="main_info_tour_comment">
+                   
+                   <!-- comment2 -->
+                   <div class="main_info_tour_comment_user">
+                       <div class="comment_user_avatar">
+                           <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_vannguyen.webp" alt="">
+                       </div>
+                       <div class="comment_user_content">
+                           <div class="content_text">
+                               <b>Vân Nguyễn</b>
+                               <p>Có tour nào nữa không ạ ??</p>
+                           </div>
+                           <div class="content_time">
+                               <b href="">Haha ·</b> <b>Trả Lời ·</b> <span>3 tháng trước</span>
+                           </div>
+                       </div>
+                   </div>
 
+                   <!-- comment3 -->
+                   <div class="main_info_tour_comment_user">
+                       <div class="comment_user_avatar">
+                           <img width="36" height="36" class="rounded-circle" src="img/user_comment/user_dinhkimanh.webp" alt="">
+                       </div>
+                       <div class="comment_user_content">
+                           <div class="content_text">
+                               <b>Đinh Kim Anh</b>
+                               <p>Tour này rất vui và tuyệt vời. Wellcome Đà Nẵng City</p>
+                           </div>
+                           <div class="content_time">
+                               <b href="">Haha ·</b> <b>Trả Lời ·</b> <span>3 tháng trước</span>
+                           </div>
+                       </div>
+                   </div>
+                   
+               </div>
+           </div>
+       </div>
+           <?php
+               }}
+               else
+               header('location: index.php');
+               mysqli_close($conn);
+           ?>
+</div>                        
             <!-- CỘT FOOTER -->
             <div class="col-md-3 column3">
                 <div class="main_img">
@@ -1008,10 +1299,17 @@ if (!isset($_SESSION['isLoginOK'])) // nếu không có tồn tại (không có 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/show_interaction.js"></script>
     <script src="js/showIcon.js"></script>
+    <script>
+        var today = new Date();
+        var date = 'Thứ tư, ngày  '+ today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+        var time = today.getHours() + "h:" + today.getMinutes() + "" ;
+        var dateTime = date+' '+time;
+
+        document.getElementById("show_date").innerHTML = dateTime;
+    </script>   
 
 
 </body>
 
 </html>
-
 
