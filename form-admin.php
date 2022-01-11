@@ -41,7 +41,7 @@ th, td {
             <a class="nav-link" href="#">Xóa Tour</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Đăng Nhập </a>
+             <a class="nav-link" href="#">Đăng Nhập </a>
           </li>
           
         </ul>
