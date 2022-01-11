@@ -1,0 +1,16 @@
+body{
+    background-color: #FAFAFB;
+}
+.my_container{
+    /* margin-left: 0px;
+    margin-top: 0px; */
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.my_row_table{
+    height: 150px;
+}
+.my_td_table_id{
+    width: 30px;
+}
+

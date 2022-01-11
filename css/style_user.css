@@ -38,7 +38,6 @@
     border-radius: 10px;
     width: 345px;
     right: 0;
-
 }
 .show_giohang_title b{
     font-size: 20px;
@@ -272,13 +271,33 @@
     height: 100%;
     margin-left: 10px;
 }
+.main_info_tour_comment_formComment_right_enter ::placeholder{
+    font-size: 16px;
+}
 .main_info_tour_comment_formComment_right_icon{
     margin-top: 15px;
 }
 .main_info_tour_comment_formComment_right_icon a{
     font-size: 18px;
-    margin-left: 12px;
+    /* margin-left: 12px; */
     color: #6C6C6C;
+}
+.div_container_option{
+    /* display: none; */
+}
+.my_box_comment{
+    border: 1px solid black;
+}
+
+.btn_show_option i{
+    /* display: none; */
+}
+.btn_show_option:hover  i
+{
+    /* display: block; */
+}
+.btn_show_option span{
+    margin-left: 16px;
 }
 /* END FORM COMMENT */
 

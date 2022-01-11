@@ -90,6 +90,7 @@ body{
     border: 1px solid #e0e0e0;
     border-radius: 15px;
 }
+
 .my_card_wt,
 .status_main_btn input,
 .status_main_btn select{
@@ -222,6 +223,9 @@ body{
     color: #585858;
     font-size: 16px;
 }
+.my_btn_thugon{
+    display: none;
+}
 .my_btn_nangcao:hover{
     background-color: #ddd;
 }
@@ -230,7 +234,6 @@ body{
 }
 
 .my_btn_datlai{
-    display: none;
     background-color: #e0e0e0;
     margin-right: 15px;
 }
@@ -609,3 +612,12 @@ body{
     color: rgba(0, 0, 0, 0.54);
 }
 /* END COLUMN 3*/
+button{
+    outline: none;
+}
+/* Position */
+@media (max-width: 370px) { 
+    .btn_menu_hide{
+        display: none;
+    }
+}
