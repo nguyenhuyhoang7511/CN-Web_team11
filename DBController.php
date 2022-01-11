@@ -1,6 +1,6 @@
 <?php
 class DBController {
-	private $host = "localhost";
+	 private $host = "localhost";
 	private $user = "root";
 	private $password = "";
 	private $database = "hahalolo_tour";
