@@ -24,10 +24,11 @@
         $d = date('Y-m-d H:i:s'); // Tạo ra 1 biến lưu thời gian 
         if (mysqli_num_rows($query) > 0) { // Có bản ghi nào khớp với CSDL này không 
             $row = mysqli_fetch_array($query); // Nếu có thì lấy ra thông tin bản ghi này 
-            if ($row['email_verified_at'] == NULL) { // Kiểm tra lại xem kích hoạt hay chưa
+            mysqli_query($conn, "UPDATE db_nguoidung set status = '1' WHERE email='" . $email . "' ");
+            if ($row['email_verified_at'] == NULL) { // Kiểm tra lại xem kích hoạt hay chưa ,
 
                 // câu truy vấn 2 : cập nhật bản này
-                mysqli_query($conn, "UPDATE db_nguoidung set email_verified_at ='" . $d . "' , status = '1' WHERE email='" . $email . "'");
+                mysqli_query($conn, "UPDATE db_nguoidung set email_verified_at ='" . $d . "'   WHERE email='" . $email . "'");
                 $msg = "Xin chúc mừng! Bạn đã xác nhận thành công Email của mình.";
             } else {
                 $msg = "Bạn đã xác minh tài khoản của mình với chúng tôi";
