@@ -4,7 +4,7 @@
 
     // Thư viện xử lý gửi nhận email : Phpmailer. sendmail
     // khai báo thư viện send mail
-    use PHPMailer\PHPMailer\PHPMailer;
+     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     use PHPMailer\PHPMailer\SMTP;
 
