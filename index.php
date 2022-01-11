@@ -83,7 +83,7 @@
                          <div class="alert alert-success text-center text-danger fw-bold text-uppercase" role="alert">
                          <?php
                               // Kiểm tra xem có tồn tại cái error hay không 
-                              if (isset($_GET['showTB'])) 
+                               if (isset($_GET['showTB'])) 
                               {
                               
                               echo  $_GET['showTB'];
