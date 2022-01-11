@@ -3,7 +3,7 @@
 $dbHost     = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
-$dbName     = "thuchanh";
+$dbName     = "hahalolo_tour";
 
 // B1 : KẾT NỐI TỚI DATABASE SERVER
 // $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

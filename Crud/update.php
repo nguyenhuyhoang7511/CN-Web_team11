@@ -1,5 +1,5 @@
 <?php  
- $connect = mysqli_connect("localhost", "root", "", "thuchanh");  
+ $connect = mysqli_connect("localhost", "root", "", "hahalolo_tour");  
  if(!empty($_POST))  
  {  
      $output = '';  
@@ -24,11 +24,11 @@
      gia_tour = '$gia_tour',   
      mo_ta = '$mo_ta'  
      WHERE ma_tour ='$ma_tour'";  
-     $message = 'Data Updated'; 
+     $message = 'Cập nhật thành công'; 
      if(mysqli_query($connect, $query))  
      {  
           $output .= '<label class="text-success">' . $message . '</label>';  
-          $select_query = "SELECT * FROM db_thongtintour ORDER BY ma_tour DESC";  
+          $select_query = "SELECT * FROM db_thongtintour ORDER BY ma_tour ASC";  
           $result = mysqli_query($connect, $select_query);  
           $output .= '  
          <table class="table table-bordered">  
@@ -40,10 +40,10 @@
                <th>Địa Điểm</th>
                <th>Thời Gian</th>
                <th>Giá Tour</th>  
-               <th>Mô Tả</th>  
-               <th>Edit</th>
-               <th>View</th>
-               <th>Delete</th>
+               <th></th>
+               <th></th>
+               <th></th>
+               <th></th>
           </tr>  
           ';  
           while($row = mysqli_fetch_array($result))  
@@ -55,10 +55,10 @@
                          <td>' . $row["loai_tour"] . '</td>  
                          <td>' . $row["ten_tour"] . '</td>  
                          <td>' . $row["dia_diem"] . '</td>  
-                         <td>' . $row["thoi_gian"] . '</td>  
+                         <td>' . $row["thoi_gian"] . '</td> 
                          <td>' . $row["gia_tour"] . '</td>  
-                         <td>' . $row["mo_ta"] . '</td>  
 
+                         <td><button type="button" class="btn btn-info btn-xs"  data-whatever="@getbootstrap">Thêm ảnh</button></td>
                          <td><input type="button" name="edit" value="Edit" id="'.$row["ma_tour"] .'" class="btn btn-info btn-xs edit_data" /></td>  
                          <td><input type="button" name="view" value="view" id="' . $row["ma_tour"] . '" class="btn btn-info btn-xs view_data" /></td>  
                          <td><input type="button" name="delete" value="delete" id="' . $row["ma_tour"] . '" class="btn btn-info btn-xs delete_data" /></td>  

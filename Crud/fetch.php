@@ -1,6 +1,6 @@
 <?php  
  //fetch.php  
- $connect = mysqli_connect("localhost", "root", "", "thuchanh");  
+ $connect = mysqli_connect("localhost", "root", "", "hahalolo_tour");  
  if(isset($_POST["employee_id"]))  
  {  
       $query = "SELECT * FROM db_thongtintour WHERE ma_tour = '".$_POST["employee_id"]."'";  
