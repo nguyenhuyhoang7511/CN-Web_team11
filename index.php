@@ -164,75 +164,7 @@
             </ul>
         </div>
     </nav>
-            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light my-background " style="padding-top: 0;">
-                
-                  <div class="collapse navbar-collapse my-flex" id="navbarNav ">
-                    <div class="col-md-3">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href=""> <img  src="img/pixlr-bg-result (4).png" alt="" class="rounded-circle" style="height: 60px;"></a>
-                        </li>
-                        
-                    </ul>
-                    </div>
-                    <div class="col-md-6 ;"> 
-                    <ul class="navbar-nav " style="justify-content: center;" >
-                    
-                       
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" style="text-align: center;"><img src="img/news.png" alt=""style="width: 22px;height: 22px;"></a>
-                                <a class="nav-link" href="#">Bảng tin</a>
-                            </li>
-                        
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/air-balloon.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Trải nghiệm</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/destination.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Tour</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/hotels.png" alt="" style="width: 22px;height: 22px;"></a>
-
-                            <a class="nav-link" href="#">Khách sạn</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/plane.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Vé máy bay</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/car-wash.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Thuê xe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" style="text-align: center;"><img src="img/shopping-bag.png" alt="" style="width: 22px;height: 22px;"></a>
-                            <a class="nav-link" href="#">Mua sắm</a>
-                        </li>
-                    </ul>
-                    </div>
-                    <div class="col-md-3;" style="width: 100%;">
-                    <ul class="navbar-nav  " style="justify-content: end; align-items: center;">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#" ><img src="img/shopping-cart.png" alt="" style="width: 27px;height: 27px;"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" ><img src="img/wallet.png" alt="" style="width: 27px;height: 27px;"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><img src="img/pixlr-bg-result (1).png" alt="" style="height: 25px;" class="rounded-circle"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><img src="img/user (1).png" alt="" style="height: 50px;"></a>
-                        </li>
-                    </ul>
-                </div> 
-                </div>
-               
-
-                 
-              </nav> -->
+       
         
     </div>
 
